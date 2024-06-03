@@ -1,4 +1,4 @@
-﻿namespace Siperpus.view
+﻿namespace Sewa_Kendaraan_Cilacap.view
 {
     partial class Dashboard
     {

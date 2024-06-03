@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Sewa_Kendaraan_Cilacap.model;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -8,9 +9,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Siperpus.view
+namespace Sewa_Kendaraan_Cilacap.view
 {
-    using model;
     public partial class Login : Form
     {
         LoginCls login = new LoginCls();

@@ -1,4 +1,4 @@
-﻿using Siperpus.view;
+﻿using Sewa_Kendaraan_Cilacap.view;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -10,11 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-//Nama: Nafis WAtsiq Amrulloh
-//NIM: 220302017
-//Kelas = TI-2A
-
-namespace Siperpus
+namespace Sewa_Kendaraan_Cilacap
 {
     public partial class SplashScreen : Form
     {

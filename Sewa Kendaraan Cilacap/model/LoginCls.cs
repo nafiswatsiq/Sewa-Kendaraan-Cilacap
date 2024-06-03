@@ -1,4 +1,4 @@
-﻿using Siperpus.config;
+﻿using Sewa_Kendaraan_Cilacap.config;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Siperpus.model
+namespace Sewa_Kendaraan_Cilacap.model
 {
     internal class LoginCls
     {

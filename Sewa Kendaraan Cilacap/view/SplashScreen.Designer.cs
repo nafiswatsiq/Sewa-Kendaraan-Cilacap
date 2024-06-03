@@ -1,4 +1,4 @@
-﻿namespace Siperpus
+﻿namespace Sewa_Kendaraan_Cilacap
 {
     partial class SplashScreen
     {
