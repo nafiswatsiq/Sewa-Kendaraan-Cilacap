@@ -32,19 +32,14 @@ namespace Sewa_Kendaraan_Cilacap.view
 
         }
 
-        private void JurusanBtn_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void ProdiBtn_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void KeluarBtn_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void SewaBtn_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

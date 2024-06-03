@@ -43,10 +43,10 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(62, 108);
+            this.pictureBox1.Location = new System.Drawing.Point(37, 90);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(228, 224);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.Size = new System.Drawing.Size(286, 254);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
@@ -71,6 +71,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(347, 108);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(119, 38);
@@ -80,6 +81,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(351, 169);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(70, 16);
@@ -89,6 +91,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.ForeColor = System.Drawing.Color.White;
             this.label3.Location = new System.Drawing.Point(351, 230);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(67, 16);
@@ -97,7 +100,7 @@
             // 
             // MasukBtn
             // 
-            this.MasukBtn.BackColor = System.Drawing.Color.RoyalBlue;
+            this.MasukBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(63)))), ((int)(((byte)(219)))));
             this.MasukBtn.FlatAppearance.BorderColor = System.Drawing.Color.RoyalBlue;
             this.MasukBtn.FlatAppearance.BorderSize = 0;
             this.MasukBtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.MidnightBlue;
@@ -117,6 +120,7 @@
             this.KeluarBtn.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
             this.KeluarBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.KeluarBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.KeluarBtn.ForeColor = System.Drawing.Color.White;
             this.KeluarBtn.Location = new System.Drawing.Point(522, 295);
             this.KeluarBtn.Name = "KeluarBtn";
             this.KeluarBtn.Size = new System.Drawing.Size(143, 37);
@@ -129,6 +133,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.ControlBox = false;
             this.Controls.Add(this.KeluarBtn);
@@ -141,7 +146,7 @@
             this.Controls.Add(this.pictureBox1);
             this.Name = "Login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Masuk Siperpus";
+            this.Text = "Masuk Aplikasi";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
