@@ -19,7 +19,7 @@ namespace Sewa_Kendaraan_Cilacap.view
         public Dashboard(string username)
         {
             userLogin = username;
-
+            InitializeComponent();
         }
 
         private void Dashboard_Load(object sender, EventArgs e)
