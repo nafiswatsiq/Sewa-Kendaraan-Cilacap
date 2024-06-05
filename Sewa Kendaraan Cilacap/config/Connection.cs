@@ -15,7 +15,7 @@ namespace Sewa_Kendaraan_Cilacap.config
         MySqlCommand _command;
         MySqlDataAdapter _adapter;
 
-        string url = "server=localhost;port=3306;database=siperpus;uid=root;pwd=";
+        string url = "server=localhost;port=3306;database=sewa_kendaraan;uid=root;pwd=";
 
         public Connection()
         {

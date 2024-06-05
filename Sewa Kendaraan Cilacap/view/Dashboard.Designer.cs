@@ -61,13 +61,14 @@
             // 
             // SewaBtn
             // 
+            this.SewaBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.SewaBtn.FlatAppearance.BorderSize = 0;
             this.SewaBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.SewaBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SewaBtn.ForeColor = System.Drawing.Color.White;
-            this.SewaBtn.Location = new System.Drawing.Point(3, 226);
+            this.SewaBtn.Location = new System.Drawing.Point(12, 226);
             this.SewaBtn.Name = "SewaBtn";
-            this.SewaBtn.Size = new System.Drawing.Size(241, 40);
+            this.SewaBtn.Size = new System.Drawing.Size(232, 40);
             this.SewaBtn.TabIndex = 6;
             this.SewaBtn.Text = "Sewa";
             this.SewaBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -77,7 +78,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(-3, 0);
+            this.pictureBox1.Location = new System.Drawing.Point(-3, 12);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(250, 107);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -90,9 +91,9 @@
             this.KeluarBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.KeluarBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.KeluarBtn.ForeColor = System.Drawing.Color.White;
-            this.KeluarBtn.Location = new System.Drawing.Point(3, 302);
+            this.KeluarBtn.Location = new System.Drawing.Point(12, 302);
             this.KeluarBtn.Name = "KeluarBtn";
-            this.KeluarBtn.Size = new System.Drawing.Size(241, 40);
+            this.KeluarBtn.Size = new System.Drawing.Size(232, 40);
             this.KeluarBtn.TabIndex = 5;
             this.KeluarBtn.Text = "Keluar";
             this.KeluarBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -101,13 +102,14 @@
             // 
             // KendaraanBtn
             // 
+            this.KendaraanBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.KendaraanBtn.FlatAppearance.BorderSize = 0;
             this.KendaraanBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.KendaraanBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.KendaraanBtn.ForeColor = System.Drawing.Color.White;
-            this.KendaraanBtn.Location = new System.Drawing.Point(3, 180);
+            this.KendaraanBtn.Location = new System.Drawing.Point(12, 180);
             this.KendaraanBtn.Name = "KendaraanBtn";
-            this.KendaraanBtn.Size = new System.Drawing.Size(244, 40);
+            this.KendaraanBtn.Size = new System.Drawing.Size(235, 40);
             this.KendaraanBtn.TabIndex = 3;
             this.KendaraanBtn.Text = "Kendaraan";
             this.KendaraanBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -115,13 +117,14 @@
             // 
             // JenisBtn
             // 
+            this.JenisBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.JenisBtn.FlatAppearance.BorderSize = 0;
             this.JenisBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.JenisBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.JenisBtn.ForeColor = System.Drawing.Color.White;
-            this.JenisBtn.Location = new System.Drawing.Point(3, 134);
+            this.JenisBtn.Location = new System.Drawing.Point(12, 134);
             this.JenisBtn.Name = "JenisBtn";
-            this.JenisBtn.Size = new System.Drawing.Size(241, 40);
+            this.JenisBtn.Size = new System.Drawing.Size(232, 40);
             this.JenisBtn.TabIndex = 2;
             this.JenisBtn.Text = "Jenis Kendaraan";
             this.JenisBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;

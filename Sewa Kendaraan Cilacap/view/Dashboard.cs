@@ -39,7 +39,12 @@ namespace Sewa_Kendaraan_Cilacap.view
 
         private void SewaBtn_Click(object sender, EventArgs e)
         {
+            SewaKendaraan sewaKendaraan = new SewaKendaraan();
+            sewaKendaraan.TopLevel = false;
+            sewaKendaraan.AutoScroll = true;
 
+            ContentPnl.Controls.Add(sewaKendaraan);
+            sewaKendaraan.Show();
         }
     }
 }
