@@ -24,7 +24,12 @@ namespace Sewa_Kendaraan_Cilacap.view
 
         private void Dashboard_Load(object sender, EventArgs e)
         {
+            Jenis jenisKendaraan = new Jenis();
+            jenisKendaraan.TopLevel = false;
+            jenisKendaraan.AutoScroll = true;
 
+            ContentPnl.Controls.Add(jenisKendaraan);
+            jenisKendaraan.Show();
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -45,6 +50,16 @@ namespace Sewa_Kendaraan_Cilacap.view
 
             ContentPnl.Controls.Add(sewaKendaraan);
             sewaKendaraan.Show();
+        }
+
+        private void JenisBtn_Click(object sender, EventArgs e)
+        {
+            Jenis jenisKendaraan = new Jenis();
+            jenisKendaraan.TopLevel = false;
+            jenisKendaraan.AutoScroll = true;
+
+            ContentPnl.Controls.Add(jenisKendaraan);
+            jenisKendaraan.Show();
         }
     }
 }

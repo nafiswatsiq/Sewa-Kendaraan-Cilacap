@@ -129,6 +129,7 @@
             this.JenisBtn.Text = "Jenis Kendaraan";
             this.JenisBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.JenisBtn.UseVisualStyleBackColor = true;
+            this.JenisBtn.Click += new System.EventHandler(this.JenisBtn_Click);
             // 
             // NavPnl
             // 
