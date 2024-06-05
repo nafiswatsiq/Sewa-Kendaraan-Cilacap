@@ -56,6 +56,7 @@
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="model\JenisCls.cs" />
+    <Compile Include="model\KendaraanCls.cs" />
     <Compile Include="model\LoginCls.cs" />
     <Compile Include="model\SewaCls.cs" />
     <Compile Include="Program.cs" />
@@ -77,6 +78,12 @@
     </Compile>
     <Compile Include="view\Jenis.Designer.cs">
       <DependentUpon>Jenis.cs</DependentUpon>
+    </Compile>
+    <Compile Include="view\Kendaraan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="view\Kendaraan.Designer.cs">
+      <DependentUpon>Kendaraan.cs</DependentUpon>
     </Compile>
     <Compile Include="view\Login.cs">
       <SubType>Form</SubType>
@@ -119,6 +126,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="view\Jenis.resx">
       <DependentUpon>Jenis.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="view\Kendaraan.resx">
+      <DependentUpon>Kendaraan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="view\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>

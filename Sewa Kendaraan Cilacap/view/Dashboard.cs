@@ -44,6 +44,10 @@ namespace Sewa_Kendaraan_Cilacap.view
 
         private void SewaBtn_Click(object sender, EventArgs e)
         {
+            JenisBtn.BackColor = Color.FromArgb(0, 0, 0);
+            KendaraanBtn.BackColor = Color.FromArgb(0, 0, 0);
+            SewaBtn.BackColor = Color.FromArgb(10, 63, 219);
+
             SewaKendaraan sewaKendaraan = new SewaKendaraan();
             sewaKendaraan.TopLevel = false;
             sewaKendaraan.AutoScroll = true;
@@ -54,12 +58,30 @@ namespace Sewa_Kendaraan_Cilacap.view
 
         private void JenisBtn_Click(object sender, EventArgs e)
         {
+            SewaBtn.BackColor = Color.FromArgb(0, 0, 0);
+            KendaraanBtn.BackColor = Color.FromArgb(0, 0, 0);
+            JenisBtn.BackColor = Color.FromArgb(10, 63, 219);
+
             Jenis jenisKendaraan = new Jenis();
             jenisKendaraan.TopLevel = false;
             jenisKendaraan.AutoScroll = true;
 
             ContentPnl.Controls.Add(jenisKendaraan);
             jenisKendaraan.Show();
+        }
+
+        private void KendaraanBtn_Click(object sender, EventArgs e)
+        {
+            SewaBtn.BackColor = Color.FromArgb(0, 0, 0);
+            JenisBtn.BackColor = Color.FromArgb(0, 0, 0);
+            KendaraanBtn.BackColor = Color.FromArgb(10, 63, 219);
+
+            Kendaraan kendaraan = new Kendaraan();
+            kendaraan.TopLevel = false;
+            kendaraan.AutoScroll = true;
+
+            ContentPnl.Controls.Add(kendaraan);
+            kendaraan.Show();
         }
     }
 }

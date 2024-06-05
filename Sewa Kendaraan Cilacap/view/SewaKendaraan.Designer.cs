@@ -35,11 +35,6 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.tabelSewa = new System.Windows.Forms.DataGridView();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.panel7 = new System.Windows.Forms.Panel();
-            this.searchTxt = new System.Windows.Forms.TextBox();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.cariBtn = new System.Windows.Forms.Button();
             this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -50,6 +45,11 @@
             this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.searchTxt = new System.Windows.Forms.TextBox();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.cariBtn = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -72,6 +72,7 @@
             this.panel2.Padding = new System.Windows.Forms.Padding(50, 30, 50, 10);
             this.panel2.Size = new System.Drawing.Size(1228, 102);
             this.panel2.TabIndex = 1;
+            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
             // panel5
             // 
@@ -81,6 +82,7 @@
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(183, 62);
             this.panel5.TabIndex = 2;
+            this.panel5.Paint += new System.Windows.Forms.PaintEventHandler(this.panel5_Paint);
             // 
             // tambahSewaBtn
             // 
@@ -107,6 +109,7 @@
             this.label1.Size = new System.Drawing.Size(211, 29);
             this.label1.TabIndex = 0;
             this.label1.Text = "Sewa Kendaraan";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // panel1
             // 
@@ -119,6 +122,7 @@
             this.panel1.Padding = new System.Windows.Forms.Padding(50);
             this.panel1.Size = new System.Drawing.Size(1228, 562);
             this.panel1.TabIndex = 2;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // panel4
             // 
@@ -128,11 +132,13 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(1128, 406);
             this.panel4.TabIndex = 2;
+            this.panel4.Paint += new System.Windows.Forms.PaintEventHandler(this.panel4_Paint);
             // 
             // tabelSewa
             // 
             this.tabelSewa.AllowUserToAddRows = false;
             this.tabelSewa.AllowUserToDeleteRows = false;
+            this.tabelSewa.BackgroundColor = System.Drawing.Color.White;
             this.tabelSewa.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.tabelSewa.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column10,
@@ -154,61 +160,6 @@
             this.tabelSewa.Size = new System.Drawing.Size(1128, 406);
             this.tabelSewa.TabIndex = 0;
             this.tabelSewa.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tabelSewa_CellClick);
-            // 
-            // panel3
-            // 
-            this.panel3.Controls.Add(this.panel7);
-            this.panel3.Controls.Add(this.panel6);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel3.Location = new System.Drawing.Point(50, 50);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1128, 56);
-            this.panel3.TabIndex = 1;
-            // 
-            // panel7
-            // 
-            this.panel7.Controls.Add(this.searchTxt);
-            this.panel7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel7.Location = new System.Drawing.Point(0, 0);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(928, 56);
-            this.panel7.TabIndex = 1;
-            // 
-            // searchTxt
-            // 
-            this.searchTxt.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.searchTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.searchTxt.Location = new System.Drawing.Point(0, 0);
-            this.searchTxt.MinimumSize = new System.Drawing.Size(4, 35);
-            this.searchTxt.Name = "searchTxt";
-            this.searchTxt.Size = new System.Drawing.Size(928, 35);
-            this.searchTxt.TabIndex = 0;
-            this.searchTxt.TextChanged += new System.EventHandler(this.searchTxt_TextChanged);
-            // 
-            // panel6
-            // 
-            this.panel6.Controls.Add(this.cariBtn);
-            this.panel6.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel6.Location = new System.Drawing.Point(928, 0);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(200, 56);
-            this.panel6.TabIndex = 0;
-            // 
-            // cariBtn
-            // 
-            this.cariBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(63)))), ((int)(((byte)(219)))));
-            this.cariBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.cariBtn.FlatAppearance.BorderSize = 0;
-            this.cariBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cariBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cariBtn.ForeColor = System.Drawing.Color.White;
-            this.cariBtn.Location = new System.Drawing.Point(20, 3);
-            this.cariBtn.Name = "cariBtn";
-            this.cariBtn.Size = new System.Drawing.Size(176, 39);
-            this.cariBtn.TabIndex = 0;
-            this.cariBtn.Text = "Cari";
-            this.cariBtn.UseVisualStyleBackColor = false;
-            this.cariBtn.Click += new System.EventHandler(this.cariBtn_Click);
             // 
             // Column10
             // 
@@ -299,6 +250,64 @@
             this.Column9.Name = "Column9";
             this.Column9.ReadOnly = true;
             this.Column9.Width = 125;
+            // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.panel7);
+            this.panel3.Controls.Add(this.panel6);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel3.Location = new System.Drawing.Point(50, 50);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(1128, 56);
+            this.panel3.TabIndex = 1;
+            this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
+            // 
+            // panel7
+            // 
+            this.panel7.Controls.Add(this.searchTxt);
+            this.panel7.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel7.Location = new System.Drawing.Point(0, 0);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(928, 56);
+            this.panel7.TabIndex = 1;
+            this.panel7.Paint += new System.Windows.Forms.PaintEventHandler(this.panel7_Paint);
+            // 
+            // searchTxt
+            // 
+            this.searchTxt.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.searchTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.searchTxt.Location = new System.Drawing.Point(0, 0);
+            this.searchTxt.MinimumSize = new System.Drawing.Size(4, 35);
+            this.searchTxt.Name = "searchTxt";
+            this.searchTxt.Size = new System.Drawing.Size(928, 27);
+            this.searchTxt.TabIndex = 0;
+            this.searchTxt.TextChanged += new System.EventHandler(this.searchTxt_TextChanged);
+            // 
+            // panel6
+            // 
+            this.panel6.Controls.Add(this.cariBtn);
+            this.panel6.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel6.Location = new System.Drawing.Point(928, 0);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(200, 56);
+            this.panel6.TabIndex = 0;
+            this.panel6.Paint += new System.Windows.Forms.PaintEventHandler(this.panel6_Paint);
+            // 
+            // cariBtn
+            // 
+            this.cariBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(63)))), ((int)(((byte)(219)))));
+            this.cariBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.cariBtn.FlatAppearance.BorderSize = 0;
+            this.cariBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cariBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cariBtn.ForeColor = System.Drawing.Color.White;
+            this.cariBtn.Location = new System.Drawing.Point(20, 3);
+            this.cariBtn.Name = "cariBtn";
+            this.cariBtn.Size = new System.Drawing.Size(176, 39);
+            this.cariBtn.TabIndex = 0;
+            this.cariBtn.Text = "Cari";
+            this.cariBtn.UseVisualStyleBackColor = false;
+            this.cariBtn.Click += new System.EventHandler(this.cariBtn_Click);
             // 
             // SewaKendaraan
             // 

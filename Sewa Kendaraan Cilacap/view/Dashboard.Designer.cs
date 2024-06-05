@@ -87,6 +87,7 @@
             // 
             // KeluarBtn
             // 
+            this.KeluarBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.KeluarBtn.FlatAppearance.BorderSize = 0;
             this.KeluarBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.KeluarBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -114,6 +115,7 @@
             this.KendaraanBtn.Text = "Kendaraan";
             this.KendaraanBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.KendaraanBtn.UseVisualStyleBackColor = true;
+            this.KendaraanBtn.Click += new System.EventHandler(this.KendaraanBtn_Click);
             // 
             // JenisBtn
             // 
