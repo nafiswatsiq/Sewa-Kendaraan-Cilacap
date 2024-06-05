@@ -11,6 +11,8 @@ using System.Windows.Forms;
 
 namespace Sewa_Kendaraan_Cilacap.view
 {
+    using print;
+
     public partial class SewaKendaraan : Form
     {
         SewaCls sewa = new SewaCls();
@@ -71,6 +73,12 @@ namespace Sewa_Kendaraan_Cilacap.view
         private void searchTxt_TextChanged(object sender, EventArgs e)
         {
             ListSewa();
+        }
+
+        private void cetakBtn_Click(object sender, EventArgs e)
+        {
+            RekapSewa rekapSewa = new RekapSewa();
+            rekapSewa.ShowDialog(this);
         }
     }
 }

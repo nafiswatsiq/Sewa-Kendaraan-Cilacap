@@ -35,11 +35,6 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.tabelSewa = new System.Windows.Forms.DataGridView();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.panel7 = new System.Windows.Forms.Panel();
-            this.searchTxt = new System.Windows.Forms.TextBox();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.cariBtn = new System.Windows.Forms.Button();
             this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -50,6 +45,12 @@
             this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.searchTxt = new System.Windows.Forms.TextBox();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.cariBtn = new System.Windows.Forms.Button();
+            this.cetakBtn = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -67,19 +68,20 @@
             this.panel2.Controls.Add(this.label1);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Margin = new System.Windows.Forms.Padding(10);
+            this.panel2.Margin = new System.Windows.Forms.Padding(11, 12, 11, 12);
             this.panel2.Name = "panel2";
-            this.panel2.Padding = new System.Windows.Forms.Padding(50, 30, 50, 10);
-            this.panel2.Size = new System.Drawing.Size(1228, 102);
+            this.panel2.Padding = new System.Windows.Forms.Padding(56, 38, 56, 12);
+            this.panel2.Size = new System.Drawing.Size(1382, 123);
             this.panel2.TabIndex = 1;
             // 
             // panel5
             // 
             this.panel5.Controls.Add(this.tambahSewaBtn);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel5.Location = new System.Drawing.Point(995, 30);
+            this.panel5.Location = new System.Drawing.Point(1120, 38);
+            this.panel5.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(183, 62);
+            this.panel5.Size = new System.Drawing.Size(206, 73);
             this.panel5.TabIndex = 2;
             // 
             // tambahSewaBtn
@@ -90,9 +92,10 @@
             this.tambahSewaBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.tambahSewaBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tambahSewaBtn.ForeColor = System.Drawing.Color.White;
-            this.tambahSewaBtn.Location = new System.Drawing.Point(3, 4);
+            this.tambahSewaBtn.Location = new System.Drawing.Point(3, 5);
+            this.tambahSewaBtn.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tambahSewaBtn.Name = "tambahSewaBtn";
-            this.tambahSewaBtn.Size = new System.Drawing.Size(176, 55);
+            this.tambahSewaBtn.Size = new System.Drawing.Size(198, 69);
             this.tambahSewaBtn.TabIndex = 1;
             this.tambahSewaBtn.Text = "Tambah Sewa";
             this.tambahSewaBtn.UseVisualStyleBackColor = false;
@@ -102,31 +105,34 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(53, 63);
+            this.label1.Location = new System.Drawing.Point(60, 79);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(211, 29);
+            this.label1.Size = new System.Drawing.Size(246, 32);
             this.label1.TabIndex = 0;
             this.label1.Text = "Sewa Kendaraan";
             // 
             // panel1
             // 
             this.panel1.AutoSize = true;
+            this.panel1.Controls.Add(this.cetakBtn);
             this.panel1.Controls.Add(this.panel4);
             this.panel1.Controls.Add(this.panel3);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(0, 102);
+            this.panel1.Location = new System.Drawing.Point(0, 123);
+            this.panel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Padding = new System.Windows.Forms.Padding(50);
-            this.panel1.Size = new System.Drawing.Size(1228, 562);
+            this.panel1.Padding = new System.Windows.Forms.Padding(56, 62, 56, 62);
+            this.panel1.Size = new System.Drawing.Size(1382, 707);
             this.panel1.TabIndex = 2;
             // 
             // panel4
             // 
             this.panel4.Controls.Add(this.tabelSewa);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel4.Location = new System.Drawing.Point(50, 106);
+            this.panel4.Location = new System.Drawing.Point(56, 132);
+            this.panel4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1128, 406);
+            this.panel4.Size = new System.Drawing.Size(1270, 513);
             this.panel4.TabIndex = 2;
             // 
             // tabelSewa
@@ -147,68 +153,14 @@
             this.Column9});
             this.tabelSewa.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabelSewa.Location = new System.Drawing.Point(0, 0);
+            this.tabelSewa.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tabelSewa.Name = "tabelSewa";
             this.tabelSewa.ReadOnly = true;
             this.tabelSewa.RowHeadersWidth = 51;
             this.tabelSewa.RowTemplate.Height = 24;
-            this.tabelSewa.Size = new System.Drawing.Size(1128, 406);
+            this.tabelSewa.Size = new System.Drawing.Size(1270, 513);
             this.tabelSewa.TabIndex = 0;
             this.tabelSewa.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tabelSewa_CellClick);
-            // 
-            // panel3
-            // 
-            this.panel3.Controls.Add(this.panel7);
-            this.panel3.Controls.Add(this.panel6);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel3.Location = new System.Drawing.Point(50, 50);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1128, 56);
-            this.panel3.TabIndex = 1;
-            // 
-            // panel7
-            // 
-            this.panel7.Controls.Add(this.searchTxt);
-            this.panel7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel7.Location = new System.Drawing.Point(0, 0);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(928, 56);
-            this.panel7.TabIndex = 1;
-            // 
-            // searchTxt
-            // 
-            this.searchTxt.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.searchTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.searchTxt.Location = new System.Drawing.Point(0, 0);
-            this.searchTxt.MinimumSize = new System.Drawing.Size(4, 35);
-            this.searchTxt.Name = "searchTxt";
-            this.searchTxt.Size = new System.Drawing.Size(928, 35);
-            this.searchTxt.TabIndex = 0;
-            this.searchTxt.TextChanged += new System.EventHandler(this.searchTxt_TextChanged);
-            // 
-            // panel6
-            // 
-            this.panel6.Controls.Add(this.cariBtn);
-            this.panel6.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel6.Location = new System.Drawing.Point(928, 0);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(200, 56);
-            this.panel6.TabIndex = 0;
-            // 
-            // cariBtn
-            // 
-            this.cariBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(63)))), ((int)(((byte)(219)))));
-            this.cariBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.cariBtn.FlatAppearance.BorderSize = 0;
-            this.cariBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cariBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cariBtn.ForeColor = System.Drawing.Color.White;
-            this.cariBtn.Location = new System.Drawing.Point(20, 3);
-            this.cariBtn.Name = "cariBtn";
-            this.cariBtn.Size = new System.Drawing.Size(176, 39);
-            this.cariBtn.TabIndex = 0;
-            this.cariBtn.Text = "Cari";
-            this.cariBtn.UseVisualStyleBackColor = false;
-            this.cariBtn.Click += new System.EventHandler(this.cariBtn_Click);
             // 
             // Column10
             // 
@@ -300,18 +252,94 @@
             this.Column9.ReadOnly = true;
             this.Column9.Width = 125;
             // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.panel7);
+            this.panel3.Controls.Add(this.panel6);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel3.Location = new System.Drawing.Point(56, 62);
+            this.panel3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(1270, 70);
+            this.panel3.TabIndex = 1;
+            // 
+            // panel7
+            // 
+            this.panel7.Controls.Add(this.searchTxt);
+            this.panel7.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel7.Location = new System.Drawing.Point(0, 0);
+            this.panel7.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(1045, 70);
+            this.panel7.TabIndex = 1;
+            // 
+            // searchTxt
+            // 
+            this.searchTxt.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.searchTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.searchTxt.Location = new System.Drawing.Point(0, 0);
+            this.searchTxt.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.searchTxt.MinimumSize = new System.Drawing.Size(4, 35);
+            this.searchTxt.Name = "searchTxt";
+            this.searchTxt.Size = new System.Drawing.Size(1045, 31);
+            this.searchTxt.TabIndex = 0;
+            this.searchTxt.TextChanged += new System.EventHandler(this.searchTxt_TextChanged);
+            // 
+            // panel6
+            // 
+            this.panel6.Controls.Add(this.cariBtn);
+            this.panel6.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel6.Location = new System.Drawing.Point(1045, 0);
+            this.panel6.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(225, 70);
+            this.panel6.TabIndex = 0;
+            // 
+            // cariBtn
+            // 
+            this.cariBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(63)))), ((int)(((byte)(219)))));
+            this.cariBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.cariBtn.FlatAppearance.BorderSize = 0;
+            this.cariBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cariBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cariBtn.ForeColor = System.Drawing.Color.White;
+            this.cariBtn.Location = new System.Drawing.Point(22, 4);
+            this.cariBtn.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.cariBtn.Name = "cariBtn";
+            this.cariBtn.Size = new System.Drawing.Size(198, 49);
+            this.cariBtn.TabIndex = 0;
+            this.cariBtn.Text = "Cari";
+            this.cariBtn.UseVisualStyleBackColor = false;
+            this.cariBtn.Click += new System.EventHandler(this.cariBtn_Click);
+            // 
+            // cetakBtn
+            // 
+            this.cetakBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(63)))), ((int)(((byte)(219)))));
+            this.cetakBtn.FlatAppearance.BorderSize = 0;
+            this.cetakBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cetakBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cetakBtn.ForeColor = System.Drawing.Color.White;
+            this.cetakBtn.Location = new System.Drawing.Point(56, 660);
+            this.cetakBtn.Name = "cetakBtn";
+            this.cetakBtn.Size = new System.Drawing.Size(163, 45);
+            this.cetakBtn.TabIndex = 3;
+            this.cetakBtn.Text = "Cetak Semua";
+            this.cetakBtn.UseVisualStyleBackColor = false;
+            this.cetakBtn.Click += new System.EventHandler(this.cetakBtn_Click);
+            // 
             // SewaKendaraan
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(1228, 664);
+            this.ClientSize = new System.Drawing.Size(1382, 830);
             this.ControlBox = false;
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.MinimizeBox = false;
             this.Name = "SewaKendaraan";
             this.Text = "SewaKendaraan";
@@ -355,5 +383,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
+        private System.Windows.Forms.Button cetakBtn;
     }
 }

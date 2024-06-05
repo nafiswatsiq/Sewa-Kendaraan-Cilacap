@@ -61,5 +61,6 @@ namespace Sewa_Kendaraan_Cilacap.view
             ContentPnl.Controls.Add(jenisKendaraan);
             jenisKendaraan.Show();
         }
+
     }
 }

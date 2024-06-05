@@ -55,8 +55,9 @@
             this.SidebarPnl.Controls.Add(this.JenisBtn);
             this.SidebarPnl.Dock = System.Windows.Forms.DockStyle.Left;
             this.SidebarPnl.Location = new System.Drawing.Point(0, 0);
+            this.SidebarPnl.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.SidebarPnl.Name = "SidebarPnl";
-            this.SidebarPnl.Size = new System.Drawing.Size(247, 739);
+            this.SidebarPnl.Size = new System.Drawing.Size(278, 924);
             this.SidebarPnl.TabIndex = 0;
             // 
             // SewaBtn
@@ -66,9 +67,10 @@
             this.SewaBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.SewaBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SewaBtn.ForeColor = System.Drawing.Color.White;
-            this.SewaBtn.Location = new System.Drawing.Point(12, 226);
+            this.SewaBtn.Location = new System.Drawing.Point(14, 282);
+            this.SewaBtn.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.SewaBtn.Name = "SewaBtn";
-            this.SewaBtn.Size = new System.Drawing.Size(232, 40);
+            this.SewaBtn.Size = new System.Drawing.Size(261, 50);
             this.SewaBtn.TabIndex = 6;
             this.SewaBtn.Text = "Sewa";
             this.SewaBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -78,9 +80,10 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(-3, 12);
+            this.pictureBox1.Location = new System.Drawing.Point(-3, 15);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(250, 107);
+            this.pictureBox1.Size = new System.Drawing.Size(281, 134);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 3;
             this.pictureBox1.TabStop = false;
@@ -91,9 +94,10 @@
             this.KeluarBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.KeluarBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.KeluarBtn.ForeColor = System.Drawing.Color.White;
-            this.KeluarBtn.Location = new System.Drawing.Point(12, 302);
+            this.KeluarBtn.Location = new System.Drawing.Point(14, 475);
+            this.KeluarBtn.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.KeluarBtn.Name = "KeluarBtn";
-            this.KeluarBtn.Size = new System.Drawing.Size(232, 40);
+            this.KeluarBtn.Size = new System.Drawing.Size(261, 50);
             this.KeluarBtn.TabIndex = 5;
             this.KeluarBtn.Text = "Keluar";
             this.KeluarBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -107,9 +111,10 @@
             this.KendaraanBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.KendaraanBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.KendaraanBtn.ForeColor = System.Drawing.Color.White;
-            this.KendaraanBtn.Location = new System.Drawing.Point(12, 180);
+            this.KendaraanBtn.Location = new System.Drawing.Point(14, 225);
+            this.KendaraanBtn.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.KendaraanBtn.Name = "KendaraanBtn";
-            this.KendaraanBtn.Size = new System.Drawing.Size(235, 40);
+            this.KendaraanBtn.Size = new System.Drawing.Size(264, 50);
             this.KendaraanBtn.TabIndex = 3;
             this.KendaraanBtn.Text = "Kendaraan";
             this.KendaraanBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -122,9 +127,10 @@
             this.JenisBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.JenisBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.JenisBtn.ForeColor = System.Drawing.Color.White;
-            this.JenisBtn.Location = new System.Drawing.Point(12, 134);
+            this.JenisBtn.Location = new System.Drawing.Point(14, 168);
+            this.JenisBtn.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.JenisBtn.Name = "JenisBtn";
-            this.JenisBtn.Size = new System.Drawing.Size(232, 40);
+            this.JenisBtn.Size = new System.Drawing.Size(261, 50);
             this.JenisBtn.TabIndex = 2;
             this.JenisBtn.Text = "Jenis Kendaraan";
             this.JenisBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -135,17 +141,19 @@
             // 
             this.NavPnl.BackColor = System.Drawing.Color.Black;
             this.NavPnl.Dock = System.Windows.Forms.DockStyle.Top;
-            this.NavPnl.Location = new System.Drawing.Point(247, 0);
+            this.NavPnl.Location = new System.Drawing.Point(278, 0);
+            this.NavPnl.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.NavPnl.Name = "NavPnl";
-            this.NavPnl.Size = new System.Drawing.Size(1019, 107);
+            this.NavPnl.Size = new System.Drawing.Size(1146, 134);
             this.NavPnl.TabIndex = 1;
             // 
             // ContentPnl
             // 
             this.ContentPnl.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ContentPnl.Location = new System.Drawing.Point(247, 107);
+            this.ContentPnl.Location = new System.Drawing.Point(278, 134);
+            this.ContentPnl.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.ContentPnl.Name = "ContentPnl";
-            this.ContentPnl.Size = new System.Drawing.Size(1019, 632);
+            this.ContentPnl.Size = new System.Drawing.Size(1146, 790);
             this.ContentPnl.TabIndex = 2;
             // 
             // timer1
@@ -167,12 +175,13 @@
             // 
             // Dashboard
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1266, 739);
+            this.ClientSize = new System.Drawing.Size(1424, 924);
             this.Controls.Add(this.ContentPnl);
             this.Controls.Add(this.NavPnl);
             this.Controls.Add(this.SidebarPnl);
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "Dashboard";
             this.Text = "Dashboard Siperpus";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
