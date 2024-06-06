@@ -30,9 +30,9 @@ namespace Sewa_Kendaraan_Cilacap.view
 
         public void ListSewa()
         {
-            if(searchTxt.Text != "")
+            if(cariInputTxt.Text != "")
             {
-                tabelSewa.DataSource = pelanggan.search(searchTxt.Text);
+                tabelSewa.DataSource = pelanggan.search(cariInputTxt.Text);
             } else
             {
                 tabelSewa.DataSource = pelanggan.getAllData();

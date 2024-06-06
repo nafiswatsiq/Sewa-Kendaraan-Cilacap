@@ -36,7 +36,6 @@
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nama = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.cetak = new System.Windows.Forms.Button();
             this.SearchBtn = new System.Windows.Forms.Button();
             this.SearchBox = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
@@ -82,9 +81,10 @@
             // 
             this.BatalBtn.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
             this.BatalBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BatalBtn.Location = new System.Drawing.Point(480, 140);
+            this.BatalBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BatalBtn.Location = new System.Drawing.Point(480, 138);
             this.BatalBtn.Name = "BatalBtn";
-            this.BatalBtn.Size = new System.Drawing.Size(99, 29);
+            this.BatalBtn.Size = new System.Drawing.Size(99, 34);
             this.BatalBtn.TabIndex = 17;
             this.BatalBtn.Text = "Batal";
             this.BatalBtn.UseVisualStyleBackColor = true;
@@ -94,9 +94,10 @@
             // 
             this.HapusBtn.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
             this.HapusBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.HapusBtn.Location = new System.Drawing.Point(374, 140);
+            this.HapusBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.HapusBtn.Location = new System.Drawing.Point(374, 138);
             this.HapusBtn.Name = "HapusBtn";
-            this.HapusBtn.Size = new System.Drawing.Size(100, 29);
+            this.HapusBtn.Size = new System.Drawing.Size(100, 34);
             this.HapusBtn.TabIndex = 16;
             this.HapusBtn.Text = "Hapus";
             this.HapusBtn.UseVisualStyleBackColor = true;
@@ -106,9 +107,10 @@
             // 
             this.UbahBtn.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
             this.UbahBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.UbahBtn.Location = new System.Drawing.Point(275, 140);
+            this.UbahBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.UbahBtn.Location = new System.Drawing.Point(275, 138);
             this.UbahBtn.Name = "UbahBtn";
-            this.UbahBtn.Size = new System.Drawing.Size(93, 29);
+            this.UbahBtn.Size = new System.Drawing.Size(93, 34);
             this.UbahBtn.TabIndex = 15;
             this.UbahBtn.Text = "Ubah";
             this.UbahBtn.UseVisualStyleBackColor = true;
@@ -119,10 +121,11 @@
             this.SimpanBtn.BackColor = System.Drawing.Color.RoyalBlue;
             this.SimpanBtn.FlatAppearance.BorderSize = 0;
             this.SimpanBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.SimpanBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SimpanBtn.ForeColor = System.Drawing.Color.White;
-            this.SimpanBtn.Location = new System.Drawing.Point(180, 140);
+            this.SimpanBtn.Location = new System.Drawing.Point(180, 138);
             this.SimpanBtn.Name = "SimpanBtn";
-            this.SimpanBtn.Size = new System.Drawing.Size(89, 29);
+            this.SimpanBtn.Size = new System.Drawing.Size(89, 34);
             this.SimpanBtn.TabIndex = 14;
             this.SimpanBtn.Text = "Simpan";
             this.SimpanBtn.UseVisualStyleBackColor = false;
@@ -139,9 +142,10 @@
             // 
             // NamaTxt
             // 
+            this.NamaTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.NamaTxt.Location = new System.Drawing.Point(180, 96);
             this.NamaTxt.Name = "NamaTxt";
-            this.NamaTxt.Size = new System.Drawing.Size(399, 22);
+            this.NamaTxt.Size = new System.Drawing.Size(399, 27);
             this.NamaTxt.TabIndex = 12;
             this.NamaTxt.TextChanged += new System.EventHandler(this.NamaTxt_TextChanged);
             // 
@@ -157,10 +161,11 @@
             // IdTxt
             // 
             this.IdTxt.Enabled = false;
+            this.IdTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.IdTxt.Location = new System.Drawing.Point(180, 52);
             this.IdTxt.MinimumSize = new System.Drawing.Size(4, 10);
             this.IdTxt.Name = "IdTxt";
-            this.IdTxt.Size = new System.Drawing.Size(399, 22);
+            this.IdTxt.Size = new System.Drawing.Size(399, 27);
             this.IdTxt.TabIndex = 10;
             this.IdTxt.TextChanged += new System.EventHandler(this.IdTxt_TextChanged);
             // 
@@ -225,7 +230,6 @@
             // 
             // panel3
             // 
-            this.panel3.Controls.Add(this.cetak);
             this.panel3.Controls.Add(this.SearchBtn);
             this.panel3.Controls.Add(this.SearchBox);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
@@ -234,28 +238,16 @@
             this.panel3.Size = new System.Drawing.Size(1182, 61);
             this.panel3.TabIndex = 12;
             // 
-            // cetak
-            // 
-            this.cetak.BackColor = System.Drawing.Color.RoyalBlue;
-            this.cetak.FlatAppearance.BorderSize = 0;
-            this.cetak.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cetak.ForeColor = System.Drawing.Color.White;
-            this.cetak.Location = new System.Drawing.Point(754, 20);
-            this.cetak.Name = "cetak";
-            this.cetak.Size = new System.Drawing.Size(72, 23);
-            this.cetak.TabIndex = 18;
-            this.cetak.Text = "Cetak";
-            this.cetak.UseVisualStyleBackColor = false;
-            // 
             // SearchBtn
             // 
             this.SearchBtn.BackColor = System.Drawing.Color.RoyalBlue;
             this.SearchBtn.FlatAppearance.BorderSize = 0;
             this.SearchBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.SearchBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SearchBtn.ForeColor = System.Drawing.Color.White;
-            this.SearchBtn.Location = new System.Drawing.Point(653, 20);
+            this.SearchBtn.Location = new System.Drawing.Point(653, 18);
             this.SearchBtn.Name = "SearchBtn";
-            this.SearchBtn.Size = new System.Drawing.Size(75, 23);
+            this.SearchBtn.Size = new System.Drawing.Size(75, 29);
             this.SearchBtn.TabIndex = 14;
             this.SearchBtn.Text = "Cari";
             this.SearchBtn.UseVisualStyleBackColor = false;
@@ -263,9 +255,10 @@
             // 
             // SearchBox
             // 
+            this.SearchBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SearchBox.Location = new System.Drawing.Point(0, 20);
             this.SearchBox.Name = "SearchBox";
-            this.SearchBox.Size = new System.Drawing.Size(647, 22);
+            this.SearchBox.Size = new System.Drawing.Size(647, 27);
             this.SearchBox.TabIndex = 13;
             this.SearchBox.TextChanged += new System.EventHandler(this.SearchBox_TextChanged);
             // 
@@ -313,6 +306,5 @@
         private System.Windows.Forms.TextBox SearchBox;
         private System.Windows.Forms.DataGridViewTextBoxColumn id;
         private System.Windows.Forms.DataGridViewTextBoxColumn nama;
-        private System.Windows.Forms.Button cetak;
     }
 }

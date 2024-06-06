@@ -65,10 +65,11 @@
             // 
             // SearchBox
             // 
+            this.SearchBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SearchBox.Location = new System.Drawing.Point(0, 18);
             this.SearchBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.SearchBox.Name = "SearchBox";
-            this.SearchBox.Size = new System.Drawing.Size(648, 22);
+            this.SearchBox.Size = new System.Drawing.Size(648, 27);
             this.SearchBox.TabIndex = 15;
             this.SearchBox.TextChanged += new System.EventHandler(this.SearchBox_TextChanged);
             // 
@@ -88,11 +89,12 @@
             this.SearchBtn.BackColor = System.Drawing.Color.RoyalBlue;
             this.SearchBtn.FlatAppearance.BorderSize = 0;
             this.SearchBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.SearchBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SearchBtn.ForeColor = System.Drawing.Color.White;
             this.SearchBtn.Location = new System.Drawing.Point(653, 18);
             this.SearchBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.SearchBtn.Name = "SearchBtn";
-            this.SearchBtn.Size = new System.Drawing.Size(75, 23);
+            this.SearchBtn.Size = new System.Drawing.Size(75, 27);
             this.SearchBtn.TabIndex = 16;
             this.SearchBtn.Text = "Cari";
             this.SearchBtn.UseVisualStyleBackColor = false;
@@ -110,21 +112,22 @@
             // JenisCmb
             // 
             this.JenisCmb.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.JenisCmb.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.JenisCmb.FormattingEnabled = true;
             this.JenisCmb.Location = new System.Drawing.Point(165, 135);
             this.JenisCmb.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.JenisCmb.Name = "JenisCmb";
-            this.JenisCmb.Size = new System.Drawing.Size(399, 24);
+            this.JenisCmb.Size = new System.Drawing.Size(399, 28);
             this.JenisCmb.TabIndex = 26;
             // 
             // BatalBtn
             // 
             this.BatalBtn.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
             this.BatalBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BatalBtn.Location = new System.Drawing.Point(467, 289);
+            this.BatalBtn.Location = new System.Drawing.Point(467, 287);
             this.BatalBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.BatalBtn.Name = "BatalBtn";
-            this.BatalBtn.Size = new System.Drawing.Size(99, 30);
+            this.BatalBtn.Size = new System.Drawing.Size(99, 32);
             this.BatalBtn.TabIndex = 25;
             this.BatalBtn.Text = "Batal";
             this.BatalBtn.UseVisualStyleBackColor = true;
@@ -134,10 +137,10 @@
             // 
             this.HapusBtn.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
             this.HapusBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.HapusBtn.Location = new System.Drawing.Point(360, 289);
+            this.HapusBtn.Location = new System.Drawing.Point(360, 287);
             this.HapusBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.HapusBtn.Name = "HapusBtn";
-            this.HapusBtn.Size = new System.Drawing.Size(100, 30);
+            this.HapusBtn.Size = new System.Drawing.Size(100, 32);
             this.HapusBtn.TabIndex = 24;
             this.HapusBtn.Text = "Hapus";
             this.HapusBtn.UseVisualStyleBackColor = true;
@@ -147,10 +150,10 @@
             // 
             this.UbahBtn.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
             this.UbahBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.UbahBtn.Location = new System.Drawing.Point(261, 289);
+            this.UbahBtn.Location = new System.Drawing.Point(261, 287);
             this.UbahBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.UbahBtn.Name = "UbahBtn";
-            this.UbahBtn.Size = new System.Drawing.Size(93, 30);
+            this.UbahBtn.Size = new System.Drawing.Size(93, 32);
             this.UbahBtn.TabIndex = 23;
             this.UbahBtn.Text = "Ubah";
             this.UbahBtn.UseVisualStyleBackColor = true;
@@ -162,10 +165,10 @@
             this.SimpanBtn.FlatAppearance.BorderSize = 0;
             this.SimpanBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.SimpanBtn.ForeColor = System.Drawing.Color.White;
-            this.SimpanBtn.Location = new System.Drawing.Point(165, 289);
+            this.SimpanBtn.Location = new System.Drawing.Point(165, 287);
             this.SimpanBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.SimpanBtn.Name = "SimpanBtn";
-            this.SimpanBtn.Size = new System.Drawing.Size(89, 30);
+            this.SimpanBtn.Size = new System.Drawing.Size(89, 32);
             this.SimpanBtn.TabIndex = 22;
             this.SimpanBtn.Text = "Simpan";
             this.SimpanBtn.UseVisualStyleBackColor = false;
@@ -182,10 +185,11 @@
             // 
             // NamaTxt
             // 
+            this.NamaTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.NamaTxt.Location = new System.Drawing.Point(165, 85);
             this.NamaTxt.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.NamaTxt.Name = "NamaTxt";
-            this.NamaTxt.Size = new System.Drawing.Size(399, 22);
+            this.NamaTxt.Size = new System.Drawing.Size(399, 27);
             this.NamaTxt.TabIndex = 20;
             // 
             // DataGridKendaraan
@@ -291,10 +295,11 @@
             // IdTxt
             // 
             this.IdTxt.Enabled = false;
+            this.IdTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.IdTxt.Location = new System.Drawing.Point(165, 41);
             this.IdTxt.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.IdTxt.Name = "IdTxt";
-            this.IdTxt.Size = new System.Drawing.Size(399, 22);
+            this.IdTxt.Size = new System.Drawing.Size(399, 27);
             this.IdTxt.TabIndex = 18;
             // 
             // panel1
@@ -345,10 +350,11 @@
             // 
             // HargaTxt
             // 
+            this.HargaTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.HargaTxt.Location = new System.Drawing.Point(165, 226);
             this.HargaTxt.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.HargaTxt.Name = "HargaTxt";
-            this.HargaTxt.Size = new System.Drawing.Size(399, 22);
+            this.HargaTxt.Size = new System.Drawing.Size(399, 27);
             this.HargaTxt.TabIndex = 30;
             // 
             // label4
@@ -362,10 +368,11 @@
             // 
             // PlatTxt
             // 
+            this.PlatTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.PlatTxt.Location = new System.Drawing.Point(165, 183);
             this.PlatTxt.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.PlatTxt.Name = "PlatTxt";
-            this.PlatTxt.Size = new System.Drawing.Size(399, 22);
+            this.PlatTxt.Size = new System.Drawing.Size(399, 27);
             this.PlatTxt.TabIndex = 28;
             // 
             // Kendaraan
@@ -376,7 +383,7 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Kendaraan";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Kendaraan";

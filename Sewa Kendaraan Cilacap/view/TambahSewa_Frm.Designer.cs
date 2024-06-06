@@ -31,8 +31,11 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TambahSewa_Frm));
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label9 = new System.Windows.Forms.Label();
             this.totalBayarLbl = new System.Windows.Forms.Label();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.hapusBtn = new System.Windows.Forms.PictureBox();
+            this.tambahBtn = new System.Windows.Forms.PictureBox();
             this.totalHariTxt = new System.Windows.Forms.TextBox();
             this.totalLbl = new System.Windows.Forms.Label();
             this.tanggalSelesaiDate = new System.Windows.Forms.DateTimePicker();
@@ -53,16 +56,13 @@
             this.alamatPelangganTxt = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.namaPelangganTxt = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.tambahBtn = new System.Windows.Forms.PictureBox();
-            this.hapusBtn = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.hapusBtn)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tambahBtn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.SewaGridView)).BeginInit();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.tambahBtn)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.hapusBtn)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -90,6 +90,25 @@
             this.panel2.Size = new System.Drawing.Size(927, 633);
             this.panel2.TabIndex = 0;
             // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(3, 574);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(78, 16);
+            this.label9.TabIndex = 48;
+            this.label9.Text = "Grand Total";
+            // 
+            // totalBayarLbl
+            // 
+            this.totalBayarLbl.AutoSize = true;
+            this.totalBayarLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.totalBayarLbl.Location = new System.Drawing.Point(2, 594);
+            this.totalBayarLbl.Name = "totalBayarLbl";
+            this.totalBayarLbl.Size = new System.Drawing.Size(16, 20);
+            this.totalBayarLbl.TabIndex = 48;
+            this.totalBayarLbl.Text = "-";
+            // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.hapusBtn);
@@ -111,18 +130,34 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Detail Kendaraan";
             // 
-            // totalBayarLbl
+            // hapusBtn
             // 
-            this.totalBayarLbl.AutoSize = true;
-            this.totalBayarLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.totalBayarLbl.Location = new System.Drawing.Point(2, 594);
-            this.totalBayarLbl.Name = "totalBayarLbl";
-            this.totalBayarLbl.Size = new System.Drawing.Size(16, 20);
-            this.totalBayarLbl.TabIndex = 48;
-            this.totalBayarLbl.Text = "-";
+            this.hapusBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.hapusBtn.Image = ((System.Drawing.Image)(resources.GetObject("hapusBtn.Image")));
+            this.hapusBtn.Location = new System.Drawing.Point(274, 214);
+            this.hapusBtn.Name = "hapusBtn";
+            this.hapusBtn.Size = new System.Drawing.Size(80, 69);
+            this.hapusBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.hapusBtn.TabIndex = 49;
+            this.hapusBtn.TabStop = false;
+            this.hapusBtn.Visible = false;
+            this.hapusBtn.Click += new System.EventHandler(this.hapusBtn_Click);
+            // 
+            // tambahBtn
+            // 
+            this.tambahBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.tambahBtn.Image = ((System.Drawing.Image)(resources.GetObject("tambahBtn.Image")));
+            this.tambahBtn.Location = new System.Drawing.Point(357, 217);
+            this.tambahBtn.Name = "tambahBtn";
+            this.tambahBtn.Size = new System.Drawing.Size(64, 63);
+            this.tambahBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.tambahBtn.TabIndex = 48;
+            this.tambahBtn.TabStop = false;
+            this.tambahBtn.Click += new System.EventHandler(this.tambahBtn_Click);
             // 
             // totalHariTxt
             // 
+            this.totalHariTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.totalHariTxt.Location = new System.Drawing.Point(15, 62);
             this.totalHariTxt.MinimumSize = new System.Drawing.Size(0, 28);
             this.totalHariTxt.Name = "totalHariTxt";
@@ -143,9 +178,10 @@
             // 
             // tanggalSelesaiDate
             // 
+            this.tanggalSelesaiDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tanggalSelesaiDate.Location = new System.Drawing.Point(239, 127);
             this.tanggalSelesaiDate.Name = "tanggalSelesaiDate";
-            this.tanggalSelesaiDate.Size = new System.Drawing.Size(182, 22);
+            this.tanggalSelesaiDate.Size = new System.Drawing.Size(182, 27);
             this.tanggalSelesaiDate.TabIndex = 13;
             // 
             // label3
@@ -160,18 +196,20 @@
             // kendaraanCmb
             // 
             this.kendaraanCmb.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.kendaraanCmb.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.kendaraanCmb.FormattingEnabled = true;
             this.kendaraanCmb.Location = new System.Drawing.Point(15, 184);
             this.kendaraanCmb.Name = "kendaraanCmb";
-            this.kendaraanCmb.Size = new System.Drawing.Size(406, 24);
+            this.kendaraanCmb.Size = new System.Drawing.Size(406, 28);
             this.kendaraanCmb.TabIndex = 0;
             this.kendaraanCmb.SelectedValueChanged += new System.EventHandler(this.kendaraanCmb_SelectedValueChanged);
             // 
             // tanggalMulaiDate
             // 
+            this.tanggalMulaiDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tanggalMulaiDate.Location = new System.Drawing.Point(15, 127);
             this.tanggalMulaiDate.Name = "tanggalMulaiDate";
-            this.tanggalMulaiDate.Size = new System.Drawing.Size(195, 22);
+            this.tanggalMulaiDate.Size = new System.Drawing.Size(195, 27);
             this.tanggalMulaiDate.TabIndex = 12;
             // 
             // label4
@@ -283,6 +321,7 @@
             // 
             // noTlpTxt
             // 
+            this.noTlpTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.noTlpTxt.Location = new System.Drawing.Point(24, 243);
             this.noTlpTxt.MinimumSize = new System.Drawing.Size(0, 28);
             this.noTlpTxt.Name = "noTlpTxt";
@@ -301,6 +340,7 @@
             // 
             // alamatPelangganTxt
             // 
+            this.alamatPelangganTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.alamatPelangganTxt.Location = new System.Drawing.Point(24, 127);
             this.alamatPelangganTxt.Multiline = true;
             this.alamatPelangganTxt.Name = "alamatPelangganTxt";
@@ -318,45 +358,12 @@
             // 
             // namaPelangganTxt
             // 
+            this.namaPelangganTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.namaPelangganTxt.Location = new System.Drawing.Point(24, 66);
             this.namaPelangganTxt.MinimumSize = new System.Drawing.Size(0, 28);
             this.namaPelangganTxt.Name = "namaPelangganTxt";
             this.namaPelangganTxt.Size = new System.Drawing.Size(408, 28);
             this.namaPelangganTxt.TabIndex = 0;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(3, 574);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(78, 16);
-            this.label9.TabIndex = 48;
-            this.label9.Text = "Grand Total";
-            // 
-            // tambahBtn
-            // 
-            this.tambahBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.tambahBtn.Image = ((System.Drawing.Image)(resources.GetObject("tambahBtn.Image")));
-            this.tambahBtn.Location = new System.Drawing.Point(357, 217);
-            this.tambahBtn.Name = "tambahBtn";
-            this.tambahBtn.Size = new System.Drawing.Size(64, 63);
-            this.tambahBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.tambahBtn.TabIndex = 48;
-            this.tambahBtn.TabStop = false;
-            this.tambahBtn.Click += new System.EventHandler(this.tambahBtn_Click);
-            // 
-            // hapusBtn
-            // 
-            this.hapusBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.hapusBtn.Image = ((System.Drawing.Image)(resources.GetObject("hapusBtn.Image")));
-            this.hapusBtn.Location = new System.Drawing.Point(274, 214);
-            this.hapusBtn.Name = "hapusBtn";
-            this.hapusBtn.Size = new System.Drawing.Size(80, 69);
-            this.hapusBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.hapusBtn.TabIndex = 49;
-            this.hapusBtn.TabStop = false;
-            this.hapusBtn.Visible = false;
-            this.hapusBtn.Click += new System.EventHandler(this.hapusBtn_Click);
             // 
             // TambahSewa_Frm
             // 
@@ -372,11 +379,11 @@
             this.panel2.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.hapusBtn)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tambahBtn)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.SewaGridView)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.tambahBtn)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.hapusBtn)).EndInit();
             this.ResumeLayout(false);
 
         }
