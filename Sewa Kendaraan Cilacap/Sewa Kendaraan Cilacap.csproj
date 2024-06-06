@@ -71,6 +71,12 @@
       <DependentUpon>PrintSewa.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="print\PrintSewa2.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PrintSewa2.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="print\RekapSewa.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -124,6 +130,10 @@
     <EmbeddedResource Include="print\PrintSewa.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>PrintSewa.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="print\PrintSewa2.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>PrintSewa2.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="print\RekapSewa.resx">
       <DependentUpon>RekapSewa.cs</DependentUpon>

@@ -181,7 +181,7 @@ namespace Sewa_Kendaraan_Cilacap.view
                     data += res;
                 }
             }
-            //cetak();
+            /cetak();
             sewaKendaraanForm.ListSewa();
 
             MessageBox.Show(data + " Data berhasil disimpan", "Informasi", MessageBoxButtons.OK, MessageBoxIcon.Information);
