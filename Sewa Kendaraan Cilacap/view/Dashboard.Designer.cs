@@ -41,8 +41,14 @@
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.imageList2 = new System.Windows.Forms.ImageList(this.components);
+            this.label1 = new System.Windows.Forms.Label();
+            this.helloAdmin = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.tanggalLbl = new System.Windows.Forms.Label();
             this.SidebarPnl.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.NavPnl.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // SidebarPnl
@@ -136,6 +142,8 @@
             // NavPnl
             // 
             this.NavPnl.BackColor = System.Drawing.Color.Black;
+            this.NavPnl.Controls.Add(this.panel1);
+            this.NavPnl.Controls.Add(this.label1);
             this.NavPnl.Dock = System.Windows.Forms.DockStyle.Top;
             this.NavPnl.Location = new System.Drawing.Point(247, 0);
             this.NavPnl.Name = "NavPnl";
@@ -167,6 +175,49 @@
             this.imageList2.ImageSize = new System.Drawing.Size(16, 16);
             this.imageList2.TransparentColor = System.Drawing.Color.Transparent;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(27, 36);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(545, 32);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "SEWA KENDARAAN KELOMPOK TIGA";
+            // 
+            // helloAdmin
+            // 
+            this.helloAdmin.AutoSize = true;
+            this.helloAdmin.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.helloAdmin.ForeColor = System.Drawing.Color.White;
+            this.helloAdmin.Location = new System.Drawing.Point(3, 25);
+            this.helloAdmin.Name = "helloAdmin";
+            this.helloAdmin.Size = new System.Drawing.Size(119, 25);
+            this.helloAdmin.TabIndex = 1;
+            this.helloAdmin.Text = "Halo Admin!";
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.tanggalLbl);
+            this.panel1.Controls.Add(this.helloAdmin);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel1.Location = new System.Drawing.Point(819, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(200, 107);
+            this.panel1.TabIndex = 2;
+            // 
+            // tanggalLbl
+            // 
+            this.tanggalLbl.AutoSize = true;
+            this.tanggalLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tanggalLbl.ForeColor = System.Drawing.Color.White;
+            this.tanggalLbl.Location = new System.Drawing.Point(3, 63);
+            this.tanggalLbl.Name = "tanggalLbl";
+            this.tanggalLbl.Size = new System.Drawing.Size(80, 22);
+            this.tanggalLbl.TabIndex = 2;
+            this.tanggalLbl.Text = "12/12/12";
+            // 
             // Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -181,6 +232,10 @@
             this.Load += new System.EventHandler(this.Dashboard_Load);
             this.SidebarPnl.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.NavPnl.ResumeLayout(false);
+            this.NavPnl.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -198,5 +253,9 @@
         private System.Windows.Forms.ImageList imageList1;
         private System.Windows.Forms.ImageList imageList2;
         private System.Windows.Forms.Button SewaBtn;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label helloAdmin;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label tanggalLbl;
     }
 }

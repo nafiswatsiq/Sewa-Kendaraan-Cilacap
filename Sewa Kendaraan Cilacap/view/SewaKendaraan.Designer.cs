@@ -260,9 +260,9 @@
             this.searchBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.searchBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.searchBtn.ForeColor = System.Drawing.Color.White;
-            this.searchBtn.Location = new System.Drawing.Point(17, 0);
+            this.searchBtn.Location = new System.Drawing.Point(20, 0);
             this.searchBtn.Name = "searchBtn";
-            this.searchBtn.Size = new System.Drawing.Size(111, 30);
+            this.searchBtn.Size = new System.Drawing.Size(111, 36);
             this.searchBtn.TabIndex = 0;
             this.searchBtn.Text = "Cari";
             this.searchBtn.UseVisualStyleBackColor = false;

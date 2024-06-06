@@ -56,12 +56,6 @@
   <ItemGroup>
     <Compile Include="config\Config.cs" />
     <Compile Include="config\Connection.cs" />
-    <Compile Include="Form1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </Compile>
     <Compile Include="model\JenisCls.cs" />
     <Compile Include="model\KendaraanCls.cs" />
     <Compile Include="model\LoginCls.cs" />

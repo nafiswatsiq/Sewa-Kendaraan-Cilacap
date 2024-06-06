@@ -24,6 +24,8 @@ namespace Sewa_Kendaraan_Cilacap.view
 
         private void Dashboard_Load(object sender, EventArgs e)
         {
+            helloAdmin.Text = "Hello, " + userLogin + "!";
+
             Jenis jenisKendaraan = new Jenis();
             jenisKendaraan.TopLevel = false;
             jenisKendaraan.AutoScroll = true;
@@ -34,7 +36,7 @@ namespace Sewa_Kendaraan_Cilacap.view
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-
+            tanggalLbl.Text = "Date: " + DateTime.Now.ToShortDateString();
         }
 
         private void KeluarBtn_Click(object sender, EventArgs e)

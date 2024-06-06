@@ -134,9 +134,9 @@
             // 
             this.hapusBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.hapusBtn.Image = ((System.Drawing.Image)(resources.GetObject("hapusBtn.Image")));
-            this.hapusBtn.Location = new System.Drawing.Point(274, 214);
+            this.hapusBtn.Location = new System.Drawing.Point(293, 212);
             this.hapusBtn.Name = "hapusBtn";
-            this.hapusBtn.Size = new System.Drawing.Size(80, 69);
+            this.hapusBtn.Size = new System.Drawing.Size(72, 64);
             this.hapusBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.hapusBtn.TabIndex = 49;
             this.hapusBtn.TabStop = false;
@@ -147,9 +147,9 @@
             // 
             this.tambahBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.tambahBtn.Image = ((System.Drawing.Image)(resources.GetObject("tambahBtn.Image")));
-            this.tambahBtn.Location = new System.Drawing.Point(357, 217);
+            this.tambahBtn.Location = new System.Drawing.Point(367, 219);
             this.tambahBtn.Name = "tambahBtn";
-            this.tambahBtn.Size = new System.Drawing.Size(64, 63);
+            this.tambahBtn.Size = new System.Drawing.Size(54, 50);
             this.tambahBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.tambahBtn.TabIndex = 48;
             this.tambahBtn.TabStop = false;
