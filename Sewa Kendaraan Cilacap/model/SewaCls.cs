@@ -14,9 +14,8 @@ namespace Sewa_Kendaraan_Cilacap.model
     {
         private int _id;
         private string _code;
+        private int _pelanggan_id;
         private int _kendaraan_id;
-        private string _nama_pelanggan;
-        private string _alamat_pelanggan;
         private int _total_hari;
         private string _mulai;
         private string _selesai;
@@ -29,9 +28,8 @@ namespace Sewa_Kendaraan_Cilacap.model
         {
             _id = 0;
             _code = "";
+            _pelanggan_id = 0;
             _kendaraan_id = 0;
-            _nama_pelanggan = "";
-            _alamat_pelanggan = "";
             _total_hari = 0;
             _mulai = "";
             _selesai = "";
@@ -51,19 +49,14 @@ namespace Sewa_Kendaraan_Cilacap.model
             set { _code = value; }
         }
 
+        public int pelanggan_id
+        {
+            set { _pelanggan_id = value; }
+        }
+
         public int kendaraan_id
         {
             set { _kendaraan_id = value; }
-        }
-
-        public string nama_pelanggan
-        {
-            set { _nama_pelanggan = value; }
-        }
-
-        public string alamat_pelanggan
-        {
-            set { _alamat_pelanggan = value; }
         }
 
         public int total_hari
@@ -107,9 +100,9 @@ namespace Sewa_Kendaraan_Cilacap.model
             try
             {
                 query = "INSERT INTO sewa " +
-                            "(code, kendaraan_id, nama_pelanggan, alamat_pelanggan, total_hari, mulai, selesai, total_harga)" +
+                            "(code, pelanggan_id, kendaraan_id, total_hari, mulai, selesai, total_harga)" +
                             " VALUES " +
-                            "('"+ _code +"', '" + _kendaraan_id + "', '" + _nama_pelanggan + "', '" + _alamat_pelanggan + "', '" + _total_hari + "', '" + _mulai + "', '" + _selesai + "', '" + _total_harga + "')";
+                            "('"+ _code +"','"+ _pelanggan_id +"', '" + _kendaraan_id + "', '" + _total_hari + "', '" + _mulai + "', '" + _selesai + "', '" + _total_harga + "')";
 
                 hasil = koneksi.eksekusiBukanQuery(query);
 
@@ -133,8 +126,6 @@ namespace Sewa_Kendaraan_Cilacap.model
                 "k.nama AS nama_kendaraan, " +
                 "k.plat_nomor, " +
                 "s.code, " +
-                "s.nama_pelanggan, " +
-                "s.alamat_pelanggan, " +
                 "s.total_hari, " +
                 "s.mulai, " +
                 "s.selesai, " +
@@ -152,8 +143,6 @@ namespace Sewa_Kendaraan_Cilacap.model
             query = "SELECT j.nama AS jenis_kendaraan, " +
                 "k.nama AS nama_kendaraan, " +
                 "k.plat_nomor, s.code, " +
-                "s.nama_pelanggan, " +
-                "s.alamat_pelanggan, " +
                 "s.total_hari, " +
                 "s.mulai, " +
                 "s.selesai, " +
@@ -224,17 +213,47 @@ namespace Sewa_Kendaraan_Cilacap.model
 
         public DataTable getDataByCode(string code)
         {
-            query = "SELECT j.nama AS jenis_kendaraan, " +
-                "k.nama AS nama_kendaraan, " +
-                "k.plat_nomor, s.code, s.kendaraan_id" +
-                "s.nama_pelanggan, " +
-                "s.alamat_pelanggan, " +
+            query = "SELECT k.nama AS nama_kendaraan, " +
+                "k.plat_nomor, " +
+                "s.code, " +
                 "s.total_hari, " +
-                "s.mulai, s.selesai, s.total_harga " +
+                "s.mulai, " +
+                "s.selesai, " +
+                "s.total_harga " +
                 "FROM sewa s JOIN kendaraan k " +
                 "ON s.kendaraan_id = k.id " +
-                "JOIN jenis j ON j.id = k.jenis_id " +
                 "WHERE s.code = '" + code + "'";
+
+            return koneksi.eksekusiQuery(query);
+        }
+
+        public DataTable getDataByPelanggan(int pelanggan_id)
+        {
+            query = "SELECT k.nama AS nama_kendaraan, " +
+                "k.plat_nomor, " +
+                "s.code, " +
+                "s.total_hari, " +
+                "s.mulai, " +
+                "s.selesai, " +
+                "s.total_harga " +
+                "FROM sewa s JOIN kendaraan k " +
+                "ON s.kendaraan_id = k.id " +
+                "WHERE s.pelanggan_id = '" + pelanggan_id + "'";
+
+            return koneksi.eksekusiQuery(query);
+        }
+
+        public DataTable getFirstDataByPelanggan(int pelanggan_id)
+        {
+            query = "SELECT k.nama AS nama_kendaraan, " +
+                "s.id_kendaraan, " +
+                "s.total_hari, " +
+                "s.mulai, " +
+                "s.selesai, " +
+                "s.total_harga " +
+                "FROM sewa s JOIN kendaraan k " +
+                "ON s.kendaraan_id = k.id " +
+                "WHERE s.pelanggan_id = '" + pelanggan_id + "' LIMIT 1";
 
             return koneksi.eksekusiQuery(query);
         }
@@ -247,8 +266,6 @@ namespace Sewa_Kendaraan_Cilacap.model
             {
                 query = "UPDATE sewa SET " +
                     "kendaraan_id='"+ _kendaraan_id +"'," +
-                    "nama_pelanggan='"+_nama_pelanggan+"'," +
-                    "alamat_pelanggan='"+_alamat_pelanggan+"'," +
                     "total_hari='"+_total_hari+"'," +
                     "mulai='"+_mulai+"'," +
                     "selesai='"+_selesai+"'," +
@@ -270,6 +287,28 @@ namespace Sewa_Kendaraan_Cilacap.model
             }
 
             return hasil;
+        }
+
+        public int getTotalBayar(int pelanggan_id)
+        {
+            int total = 0;
+            DataTable dt = new DataTable();
+
+            try
+            {
+                query = "SELECT SUM(total_harga) AS total FROM sewa WHERE pelanggan_id = '" + pelanggan_id + "'";
+                dt = koneksi.eksekusiQuery(query);
+
+                if (dt.Rows.Count > 0)
+                {
+                    total = Convert.ToInt32(dt.Rows[0]["total"]);
+                }
+            }catch(Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
+
+            return total;
         }
     }
 }

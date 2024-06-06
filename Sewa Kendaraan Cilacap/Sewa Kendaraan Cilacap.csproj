@@ -63,25 +63,21 @@
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="model\JenisCls.cs" />
+    <Compile Include="model\KendaraanCls.cs" />
     <Compile Include="model\LoginCls.cs" />
+    <Compile Include="model\PelangganCls.cs" />
     <Compile Include="model\SewaCls.cs" />
+    <Compile Include="print\PrintReport1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PrintReport1.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="print\PrintSewa.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>PrintSewa.rpt</DependentUpon>
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="print\PrintSewa2.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>PrintSewa2.rpt</DependentUpon>
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="print\RekapSewa.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="print\RekapSewa.Designer.cs">
-      <DependentUpon>RekapSewa.cs</DependentUpon>
+    <Compile Include="print\PrintSewa.Designer.cs">
+      <DependentUpon>PrintSewa.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -102,6 +98,12 @@
     </Compile>
     <Compile Include="view\Jenis.Designer.cs">
       <DependentUpon>Jenis.cs</DependentUpon>
+    </Compile>
+    <Compile Include="view\Kendaraan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="view\Kendaraan.Designer.cs">
+      <DependentUpon>Kendaraan.cs</DependentUpon>
     </Compile>
     <Compile Include="view\Login.cs">
       <SubType>Form</SubType>
@@ -127,16 +129,12 @@
     <Compile Include="view\TambahSewa_Frm.Designer.cs">
       <DependentUpon>TambahSewa_Frm.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="print\PrintSewa.rpt">
+    <EmbeddedResource Include="print\PrintReport1.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>PrintSewa.cs</LastGenOutput>
+      <LastGenOutput>PrintReport1.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="print\PrintSewa2.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>PrintSewa2.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="print\RekapSewa.resx">
-      <DependentUpon>RekapSewa.cs</DependentUpon>
+    <EmbeddedResource Include="print\PrintSewa.resx">
+      <DependentUpon>PrintSewa.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -155,6 +153,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="view\Jenis.resx">
       <DependentUpon>Jenis.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="view\Kendaraan.resx">
+      <DependentUpon>Kendaraan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="view\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>

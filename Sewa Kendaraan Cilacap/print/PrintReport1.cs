@@ -16,14 +16,14 @@ namespace Sewa_Kendaraan_Cilacap.print {
     using CrystalDecisions.CrystalReports.Engine;
     
     
-    public class PrintSewa2 : ReportClass {
+    public class PrintReport1 : ReportClass {
         
-        public PrintSewa2() {
+        public PrintReport1() {
         }
         
         public override string ResourceName {
             get {
-                return "PrintSewa2.rpt";
+                return "PrintReport1.rpt";
             }
             set {
                 // Do nothing
@@ -41,7 +41,7 @@ namespace Sewa_Kendaraan_Cilacap.print {
         
         public override string FullResourceName {
             get {
-                return "Sewa_Kendaraan_Cilacap.print.PrintSewa2.rpt";
+                return "Sewa_Kendaraan_Cilacap.print.PrintReport1.rpt";
             }
             set {
                 // Do nothing
@@ -87,12 +87,20 @@ namespace Sewa_Kendaraan_Cilacap.print {
                 return this.ReportDefinition.Sections[4];
             }
         }
+        
+        [Browsable(false)]
+        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
+        public CrystalDecisions.Shared.IParameterField Parameter_Codep {
+            get {
+                return this.DataDefinition.ParameterFields[0];
+            }
+        }
     }
     
     [System.Drawing.ToolboxBitmapAttribute(typeof(CrystalDecisions.Shared.ExportOptions), "report.bmp")]
-    public class CachedPrintSewa2 : Component, ICachedReport {
+    public class CachedPrintReport1 : Component, ICachedReport {
         
-        public CachedPrintSewa2() {
+        public CachedPrintReport1() {
         }
         
         [Browsable(false)]
@@ -129,7 +137,7 @@ namespace Sewa_Kendaraan_Cilacap.print {
         }
         
         public virtual CrystalDecisions.CrystalReports.Engine.ReportDocument CreateReport() {
-            PrintSewa2 rpt = new PrintSewa2();
+            PrintReport1 rpt = new PrintReport1();
             rpt.Site = this.Site;
             return rpt;
         }

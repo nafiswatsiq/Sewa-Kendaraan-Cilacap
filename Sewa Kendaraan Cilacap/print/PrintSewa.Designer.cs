@@ -1,6 +1,6 @@
 ﻿namespace Sewa_Kendaraan_Cilacap.print
 {
-    partial class RekapSewa
+    partial class PrintSewa
     {
         /// <summary>
         /// Required designer variable.
@@ -42,17 +42,16 @@
             this.crystalReportViewer1.Size = new System.Drawing.Size(800, 450);
             this.crystalReportViewer1.TabIndex = 0;
             // 
-            // RekapSewa
+            // PrintSewa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.crystalReportViewer1);
-            this.Name = "RekapSewa";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "RekapSewa";
+            this.Name = "PrintSewa";
+            this.Text = "PrintSewa";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.Load += new System.EventHandler(this.RekapSewa_Load);
+            this.Load += new System.EventHandler(this.PrintSewa_Load);
             this.ResumeLayout(false);
 
         }
