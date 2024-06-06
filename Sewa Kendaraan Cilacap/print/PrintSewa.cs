@@ -25,7 +25,7 @@ namespace Sewa_Kendaraan_Cilacap.print
         private void PrintSewa_Load(object sender, EventArgs e)
         {
             ReportDocument reportDocument = new ReportDocument();
-            reportDocument.Load(@"D:\Praktikum PBO\Sewa-Kendaraan-Cilacap\Sewa Kendaraan Cilacap\print\PrintReport1.rpt");
+            reportDocument.Load(@"D:\C# project\Sewa KEndaraan Cilacap\Sewa Kendaraan Cilacap\print\PrintReport1.rpt");
             reportDocument.SetDatabaseLogon("root", "");
             reportDocument.Refresh();
 
