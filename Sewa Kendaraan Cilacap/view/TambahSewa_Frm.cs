@@ -159,7 +159,6 @@ namespace Sewa_Kendaraan_Cilacap.view
             if (e.RowIndex >= 0)
             {
                 hapusBtn.Visible = true;
-                //DataGridViewRow row = this.SewaGridView.Rows[e.RowIndex];
                 selectedRowIndex = e.RowIndex;
             }
         }
@@ -169,7 +168,6 @@ namespace Sewa_Kendaraan_Cilacap.view
             try
             {
                 // Dapatkan indeks baris yang dipilih dalam DataGridView
-                //selectedRowIndex = SewaGridView.SelectedRows[0].Index;
                 MessageBox.Show(selectedRowIndex.ToString());
                 int selectedTotal = Convert.ToInt32(SewaGridView.Rows[selectedRowIndex].Cells["Total"].Value.ToString());
 
