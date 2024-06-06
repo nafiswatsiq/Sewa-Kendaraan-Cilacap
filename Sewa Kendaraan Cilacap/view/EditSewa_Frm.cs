@@ -14,62 +14,50 @@ namespace Sewa_Kendaraan_Cilacap.view
 {
     public partial class EditSewa_Frm : Form
     {
-        private string _code;
-        private int _kendaraan_id;
-        private string _nama_kendaraan;
-        private string _nama_pelanggan;
-        private string _alamat_pelanggan;
-        private int _total_hari;
-        private string _mulai;
-        private string _selesai;
-        private int _total_harga;
+        private string _code_pelanggan;
+        private string _nama;
+        private string _alamat;
+        private string _no_tlp;
+        private string _total_bayar;
 
-        public string code
+        int pelanggan_id;
+        int total_hari;
+        private string nama_kendaraan;
+        string tanggal_mulai;
+        string tanggal_selesai;
+        int total_harga;
+        int harga;
+        string sewa_code;
+        string total;
+        string selectedValueKendaraan;
+
+        public string code_pelanggan
         {
-            set { _code = value; }
+            set { _code_pelanggan = value; }
         }
 
-        public int kendaraan_id
+        public string nama
         {
-            set { _kendaraan_id = value; }
+            set { _nama = value; }
         }
 
-        public string nama_kendaraan
+        public string alamat
         {
-            set { _nama_kendaraan = value; }
+            set { _alamat = value; }
         }
 
-        public string nama_pelanggan
+        public string no_tlp
         {
-            set { _nama_pelanggan = value; }
+            set { _no_tlp = value; }
         }
 
-        public string alamat_pelanggan
+        public string total_bayar
         {
-            set { _alamat_pelanggan = value; }
-        }
-
-        public int total_hari
-        {
-            set { _total_hari = value; }
-        }
-
-        public string mulai
-        {
-            set { _mulai = value; }
-        }
-
-        public string selesai
-        {
-            set { _selesai = value; }
-        }
-
-        public int total_harga
-        {
-            set { _total_harga = value; }
+            set { _total_bayar = value; }
         }
 
         SewaCls sewa = new SewaCls();
+        PelangganCls pelanggan = new PelangganCls();
 
         private SewaKendaraan sewaKendaraanForm;
 
@@ -85,6 +73,7 @@ namespace Sewa_Kendaraan_Cilacap.view
 
             LoadKendaraan();
             SetData();
+            setDataSewa();
 
         }
 
@@ -103,12 +92,8 @@ namespace Sewa_Kendaraan_Cilacap.view
                 comboBoxItems[label] = value;
             }
 
-            kendaraanCmb.SelectedIndex = kendaraanCmb.FindStringExact(_nama_kendaraan);
+            //kendaraanCmb.SelectedIndex = kendaraanCmb.FindStringExact(_nama_kendaraan);
         }
-
-        int harga;
-        string total;
-        string selectedValueKendaraan;
 
         private void kendaraanCmb_SelectedValueChanged(object sender, EventArgs e)
         {
@@ -124,12 +109,17 @@ namespace Sewa_Kendaraan_Cilacap.view
 
         void SetData()
         {
-            namaPelangganTxt.Text = _nama_pelanggan;
-            alamatPelangganTxt.Text = _alamat_pelanggan;
-            totalHariTxt.Text = _total_hari.ToString();
-            tanggalMulaiDate.Value = Convert.ToDateTime(_mulai);
-            tanggalSelesaiDate.Value = Convert.ToDateTime(_selesai);
-            totalLbl.Text = "Rp. "+_total_harga.ToString();
+            namaPelangganTxt.Text = _nama;
+            alamatPelangganTxt.Text = _alamat;
+            noTlpTxt.Text = _no_tlp;
+            totalBayarLbl.Text = "Rp. " + _total_bayar;
+
+            pelanggan_id = pelanggan.getPelangganId(_code_pelanggan);
+        }
+
+        void setDataSewa()
+        {
+            DataGridSewa.DataSource = sewa.getDataByPelanggan(pelanggan_id);
         }
 
         private void hapusBtn_Click(object sender, EventArgs e)
@@ -137,9 +127,9 @@ namespace Sewa_Kendaraan_Cilacap.view
             DialogResult result = MessageBox.Show("Apakah anda yakin ingin menghapus data ini?", "Hapus Data", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (result == DialogResult.Yes)
             {
-                sewa.deleteData(_code);
+                pelanggan.deleteById(pelanggan_id);
                 MessageBox.Show("Data berhasil dihapus", "Berhasil", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                
+
                 sewaKendaraanForm.ListSewa();
 
                 this.Close();
@@ -148,16 +138,14 @@ namespace Sewa_Kendaraan_Cilacap.view
 
         private void simpanBtn_Click(object sender, EventArgs e)
         {
-            sewa.code = _code;
-            sewa.kendaraan_id = Convert.ToInt32(selectedValueKendaraan);
-            sewa.nama_pelanggan = namaPelangganTxt.Text;
-            sewa.alamat_pelanggan = alamatPelangganTxt.Text;
-            sewa.total_hari = Convert.ToInt32(totalHariTxt.Text);
-            sewa.mulai = tanggalMulaiDate.Value.ToString("yyyy-MM-dd");
-            sewa.selesai = tanggalSelesaiDate.Value.ToString("yyyy-MM-dd");
-            sewa.total_harga = Convert.ToInt32(total);
 
-            if (sewa.updateData() > 0)
+            pelanggan.id = pelanggan_id;
+            pelanggan.nama = namaPelangganTxt.Text;
+            pelanggan.alamat = alamatPelangganTxt.Text;
+            pelanggan.no_tlp = noTlpTxt.Text;
+            pelanggan.total_bayar = Convert.ToInt32(_total_bayar);
+
+            if (pelanggan.updateData() > 0)
             {
                 MessageBox.Show("Data berhasil diubah", "Berhasil", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
@@ -168,6 +156,141 @@ namespace Sewa_Kendaraan_Cilacap.view
             else
             {
                 MessageBox.Show("Data gagal diubah", "gagal", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void DataGridSewa_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow row = this.DataGridSewa.Rows[e.RowIndex];
+                sewa_code = row.Cells[2].Value.ToString();
+                totalHariTxt.Text = row.Cells[3].Value.ToString();
+                tanggalMulaiDate.Value = Convert.ToDateTime(row.Cells[4].Value.ToString());
+                tanggalSelesaiDate.Value = Convert.ToDateTime(row.Cells[5].Value.ToString());
+
+                kendaraanCmb.SelectedIndex = kendaraanCmb.FindStringExact(row.Cells[0].Value.ToString());
+
+            }
+        }
+
+        private void UbahKendaraanBtn_Click(object sender, EventArgs e)
+        {
+            sewa.code = sewa_code;
+            sewa.kendaraan_id = Convert.ToInt32(selectedValueKendaraan);
+            sewa.total_hari = Convert.ToInt32(totalHariTxt.Text);
+            sewa.mulai = tanggalMulaiDate.Value.ToString("yyyy-MM-dd");
+            sewa.selesai = tanggalSelesaiDate.Value.ToString("yyyy-MM-dd");
+            sewa.total_harga = Convert.ToInt32(total);
+
+            if (sewa.updateData() > 0)
+            {
+                _total_bayar = Convert.ToString(sewa.getTotalBayar(pelanggan_id));
+                totalBayarLbl.Text = "Rp. " + _total_bayar;
+
+                setDataSewa();
+            }
+            else
+            {
+                MessageBox.Show("Data gagal diubah", "gagal", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            ClearDataKendaraan();
+        }
+
+        private void totalHariTxt_TextChanged(object sender, EventArgs e)
+        {
+            foreach (DataRow item in sewa.getKendaraanById(selectedValueKendaraan).Rows)
+            {
+                harga = Convert.ToInt32(item["harga"].ToString());
+            }
+
+            total = Convert.ToString(harga * Convert.ToInt32(totalHariTxt.Text));
+            totalLbl.Text = "Rp. " + total;
+        }
+
+        void ClearDataKendaraan()
+        {
+            totalHariTxt.Text = "1";
+            tanggalMulaiDate.Value = DateTime.Now;
+            tanggalSelesaiDate.Value = DateTime.Now;
+            totalLbl.Text = "0";
+        }
+        private void tambahKendaraanBtn_Click(object sender, EventArgs e)
+        {
+            sewa.code = sewa.buatKode();
+            sewa.pelanggan_id = pelanggan_id;
+            sewa.kendaraan_id = Convert.ToInt32(selectedValueKendaraan);
+            sewa.total_hari = Convert.ToInt32(totalHariTxt.Text);
+            sewa.mulai = tanggalMulaiDate.Value.ToString("yyyy-MM-dd");
+            sewa.selesai = tanggalSelesaiDate.Value.ToString("yyyy-MM-dd");
+            sewa.total_harga = Convert.ToInt32(total);
+
+            if (sewa.simpanData() > 0)
+            {
+                _total_bayar = Convert.ToString(sewa.getTotalBayar(pelanggan_id));
+                totalBayarLbl.Text = "Rp. " + _total_bayar;
+
+                setDataSewa();
+            }
+            else
+            {
+                MessageBox.Show("Data gagal disimpan", "gagal", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            ClearDataKendaraan();
+        }
+
+        private void hapusKendaraanBtn_Click(object sender, EventArgs e)
+        {
+            if (sewa.deleteData(sewa_code) > 0)
+            {
+                _total_bayar = Convert.ToString(sewa.getTotalBayar(pelanggan_id));
+                totalBayarLbl.Text = "Rp. " + _total_bayar;
+
+                setDataSewa();
+            }
+            else
+            {
+                MessageBox.Show("Data gagal dihapus", "gagal", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            ClearDataKendaraan();
+        }
+
+        private void totalHariTxt_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+
+            // Tidak memperbolehkan nilai kurang dari 1
+            if (e.KeyChar == '0' && totalHariTxt.Text.Length == 0)
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void noTlpTxt_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Hanya menerima angka dan tombol backspace
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+
+            // Tidak memperbolehkan nilai kurang dari 1
+            if (e.KeyChar == '0' && noTlpTxt.Text.Length == 0)
+            {
+                e.Handled = true;
+            }
+
+            // Membatasi panjang teks maksimal 16 karakter
+            if (noTlpTxt.Text.Length >= 16 && e.KeyChar != (char)Keys.Back)
+            {
+                e.Handled = true;
             }
         }
     }

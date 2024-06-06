@@ -16,7 +16,8 @@ namespace Sewa_Kendaraan_Cilacap.view
     public partial class TambahSewa_Frm : Form
     {
         SewaCls sewa = new SewaCls();
-        // Buat DataTable untuk menyimpan data sementara
+        PelangganCls pelanggan = new PelangganCls();
+
         DataTable dataTable = new DataTable();
 
         string jenis;
@@ -24,7 +25,9 @@ namespace Sewa_Kendaraan_Cilacap.view
         string plat_nomor;
         int harga;
         string total;
+        int total_bayar;
         string selectedValueKendaraan;
+        int pelanggan_id;
 
         private SewaKendaraan sewaKendaraanForm;
 
@@ -36,7 +39,14 @@ namespace Sewa_Kendaraan_Cilacap.view
 
         private void totalHariTxt_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+
+            // Tidak memperbolehkan nilai kurang dari 1
+            if (e.KeyChar == '0' && totalHariTxt.Text.Length == 0)
             {
                 e.Handled = true;
             }
@@ -103,8 +113,6 @@ namespace Sewa_Kendaraan_Cilacap.view
         void MakeDataTable()
         {
             dataTable.Columns.Add("Id");
-            dataTable.Columns.Add("Nama Pelanggan");
-            dataTable.Columns.Add("Alamat Pelanggan");
             dataTable.Columns.Add("Total Hari");
             dataTable.Columns.Add("Tgl Mulai");
             dataTable.Columns.Add("Tgl Selesai");
@@ -113,16 +121,25 @@ namespace Sewa_Kendaraan_Cilacap.view
             dataTable.Columns.Add("Harga");
             dataTable.Columns.Add("Total");
 
+            SewaGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             SewaGridView.DataSource = dataTable;
+        }
+
+        void ClearDataKendaraan()
+        {
+            totalHariTxt.Text = "1";
+            tanggalMulaiDate.Value = DateTime.Now;
+            tanggalSelesaiDate.Value = DateTime.Now;
+            totalLbl.Text = "Rp. 0";
         }
 
         private void tambahBtn_Click(object sender, EventArgs e)
         {
+            total_bayar = total_bayar += Convert.ToInt32(total);
+            totalBayarLbl.Text = "Rp. " + total_bayar;
 
             dataTable.Rows.Add(
                 selectedValueKendaraan,
-                namaPelangganTxt.Text,
-                alamatPelangganTxt.Text,
                 totalHariTxt.Text,
                 tanggalMulaiDate.Value.ToString("yyyy-MM-dd"),
                 tanggalSelesaiDate.Value.ToString("yyyy-MM-dd"),
@@ -132,15 +149,19 @@ namespace Sewa_Kendaraan_Cilacap.view
                 total
              );
 
-            totalHariTxt.Text = "1";
-            //totalHargaTxt.Text = "";
-            tanggalMulaiDate.Value = DateTime.Now;
-            tanggalSelesaiDate.Value = DateTime.Now;
+            ClearDataKendaraan();
         }
 
+        int selectedRowIndex;
         private void SewaGridView_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            hapusBtn.Visible = true;
+
+            if (e.RowIndex >= 0)
+            {
+                hapusBtn.Visible = true;
+                //DataGridViewRow row = this.SewaGridView.Rows[e.RowIndex];
+                selectedRowIndex = e.RowIndex;
+            }
         }
 
         private void hapusBtn_Click(object sender, EventArgs e)
@@ -148,13 +169,18 @@ namespace Sewa_Kendaraan_Cilacap.view
             try
             {
                 // Dapatkan indeks baris yang dipilih dalam DataGridView
-                int selectedRowIndex = SewaGridView.SelectedRows[0].Index;
+                //selectedRowIndex = SewaGridView.SelectedRows[0].Index;
+                MessageBox.Show(selectedRowIndex.ToString());
+                int selectedTotal = Convert.ToInt32(SewaGridView.Rows[selectedRowIndex].Cells["Total"].Value.ToString());
 
+                total_bayar = total_bayar - selectedTotal;
+                totalBayarLbl.Text = "Rp. " + total_bayar;
                 // Hapus baris yang dipilih dari DataTable
                 dataTable.Rows.RemoveAt(selectedRowIndex);
 
                 // Perbarui DataGridView
                 SewaGridView.Refresh();
+
             }catch (Exception ex)
             {
                 MessageBox.Show("Pilih data yang akan dihapus", "Informasi", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -164,29 +190,94 @@ namespace Sewa_Kendaraan_Cilacap.view
         private void simpanBtn_Click(object sender, EventArgs e)
         {
             int data = 0;
-            foreach (DataRow item in dataTable.Rows)
-            {
-                sewa.code = sewa.buatKode();
-                sewa.kendaraan_id = Convert.ToInt32(item["Id"]);
-                sewa.nama_pelanggan = item["Nama Pelanggan"].ToString();
-                sewa.alamat_pelanggan = item["Alamat Pelanggan"].ToString();
-                sewa.total_hari = Convert.ToInt32(item["Total Hari"]);
-                sewa.mulai = item["Tgl Mulai"].ToString();
-                sewa.selesai = item["Tgl Selesai"].ToString();
-                sewa.total_harga = Convert.ToInt32(item["Total"]);
 
-                int res = sewa.simpanData();
-                if (res > 0)
+            pelanggan.nama = namaPelangganTxt.Text;
+            pelanggan.alamat = alamatPelangganTxt.Text;
+            pelanggan.no_tlp = noTlpTxt.Text;
+            pelanggan.total_bayar = total_bayar;
+
+            string code = pelanggan.insert();
+            if(code != "")
+            {
+                pelanggan_id = pelanggan.getPelangganId(code);
+
+                foreach (DataRow item in dataTable.Rows)
                 {
-                    data += res;
+                    sewa.code = sewa.buatKode();
+                    sewa.pelanggan_id = pelanggan_id;
+                    sewa.kendaraan_id = Convert.ToInt32(item["Id"]);
+                    sewa.total_hari = Convert.ToInt32(item["Total Hari"]);
+                    sewa.mulai = item["Tgl Mulai"].ToString();
+                    sewa.selesai = item["Tgl Selesai"].ToString();
+                    sewa.total_harga = Convert.ToInt32(item["Total"]);
+
+                    int res = sewa.simpanData();
+                    if (res > 0)
+                    {
+                        data += res;
+                    }
                 }
+
+                MessageBox.Show(data + " Data berhasil disimpan", "Informasi", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                try
+                {
+                    pelanggan.deleteById(pelanggan_id);
+                }
+                catch (Exception ex)
+                {
+                       Console.WriteLine(ex.Message);
+                }
+
+                MessageBox.Show(data + " Data Gagal disimpan", "Informasi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
             sewaKendaraanForm.ListSewa();
 
-            MessageBox.Show(data + " Data berhasil disimpan", "Informasi", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            
             this.Close();
+        }
+
+        void cetak()
+        {
+            
+        }
+
+        private void totalHariTxt_TextChanged(object sender, EventArgs e)
+        {
+            foreach (DataRow item in sewa.getKendaraanById(selectedValueKendaraan).Rows)
+            {
+                harga = Convert.ToInt32(item["harga"].ToString());
+            }
+
+            if (totalHariTxt.Text != "")
+            {
+                total = Convert.ToString(harga * Convert.ToInt32(totalHariTxt.Text));
+                totalLbl.Text = "Rp. " + total;
+            }
+
+        }
+
+        private void noTlpTxt_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Hanya menerima angka dan tombol backspace
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+
+            // Tidak memperbolehkan nilai kurang dari 1
+            if (e.KeyChar == '0' && noTlpTxt.Text.Length == 0)
+            {
+                e.Handled = true;
+            }
+
+            // Membatasi panjang teks maksimal 16 karakter
+            if (noTlpTxt.Text.Length >= 16 && e.KeyChar != (char)Keys.Back)
+            {
+                e.Handled = true;
+            }
         }
     }
 }

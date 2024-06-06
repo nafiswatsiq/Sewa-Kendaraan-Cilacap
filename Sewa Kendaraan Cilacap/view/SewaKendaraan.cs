@@ -11,9 +11,12 @@ using System.Windows.Forms;
 
 namespace Sewa_Kendaraan_Cilacap.view
 {
+    using print;
+
     public partial class SewaKendaraan : Form
     {
         SewaCls sewa = new SewaCls();
+        PelangganCls pelanggan = new PelangganCls();
 
         public SewaKendaraan()
         {
@@ -29,10 +32,10 @@ namespace Sewa_Kendaraan_Cilacap.view
         {
             if(searchTxt.Text != "")
             {
-                tabelSewa.DataSource = sewa.search(searchTxt.Text);
+                tabelSewa.DataSource = pelanggan.search(searchTxt.Text);
             } else
             {
-                tabelSewa.DataSource = sewa.getAllData();
+                tabelSewa.DataSource = pelanggan.getAllData();
             }
         }
 
@@ -53,17 +56,13 @@ namespace Sewa_Kendaraan_Cilacap.view
             if (e.RowIndex >= 0)
             {
                 DataGridViewRow row = this.tabelSewa.Rows[e.RowIndex];
-                string code = row.Cells[3].Value.ToString();
 
                 EditSewa_Frm editSewa = new EditSewa_Frm(this);
-                editSewa.nama_kendaraan = row.Cells[1].Value.ToString();
-                editSewa.code = code;
-                editSewa.nama_pelanggan = row.Cells[4].Value.ToString();
-                editSewa.alamat_pelanggan = row.Cells[5].Value.ToString();
-                editSewa.total_hari = Convert.ToInt32(row.Cells[6].Value);
-                editSewa.mulai = row.Cells[7].Value.ToString();
-                editSewa.selesai = row.Cells[8].Value.ToString();
-                editSewa.total_harga = Convert.ToInt32(row.Cells[9].Value);
+                editSewa.code_pelanggan = row.Cells[0].Value.ToString();
+                editSewa.nama = row.Cells[1].Value.ToString();
+                editSewa.alamat = row.Cells[2].Value.ToString();
+                editSewa.no_tlp = row.Cells[3].Value.ToString();
+                editSewa.total_bayar = row.Cells[4].Value.ToString();
                 editSewa.ShowDialog();
             }   
         }
@@ -73,44 +72,11 @@ namespace Sewa_Kendaraan_Cilacap.view
             ListSewa();
         }
 
-        private void panel5_Paint(object sender, PaintEventArgs e)
+        private void cetakBtn_Click(object sender, EventArgs e)
         {
-
+            RekapSewa rekapSewa = new RekapSewa();
+            rekapSewa.ShowDialog(this);
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void panel4_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void panel2_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void panel3_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void panel7_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void panel6_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
     }
 }
