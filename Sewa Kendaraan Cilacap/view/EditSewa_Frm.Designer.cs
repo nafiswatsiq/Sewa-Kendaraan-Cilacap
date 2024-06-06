@@ -49,6 +49,9 @@
             this.totalLbl = new System.Windows.Forms.Label();
             this.hapusBtn = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.hapusKendaraanBtn = new System.Windows.Forms.PictureBox();
+            this.ubahKendaraanBtn = new System.Windows.Forms.PictureBox();
+            this.tambahKendaraanBtn = new System.Windows.Forms.PictureBox();
             this.DataGridSewa = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -59,15 +62,14 @@
             this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label9 = new System.Windows.Forms.Label();
             this.totalBayarLbl = new System.Windows.Forms.Label();
-            this.tambahKendaraanBtn = new System.Windows.Forms.PictureBox();
-            this.ubahKendaraanBtn = new System.Windows.Forms.PictureBox();
-            this.hapusKendaraanBtn = new System.Windows.Forms.PictureBox();
+            this.printBtn = new System.Windows.Forms.PictureBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DataGridSewa)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tambahKendaraanBtn)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ubahKendaraanBtn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.hapusKendaraanBtn)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ubahKendaraanBtn)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tambahKendaraanBtn)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DataGridSewa)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.printBtn)).BeginInit();
             this.SuspendLayout();
             // 
             // simpanBtn
@@ -79,9 +81,10 @@
             this.simpanBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.simpanBtn.ForeColor = System.Drawing.Color.White;
             this.simpanBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.simpanBtn.Location = new System.Drawing.Point(885, 590);
+            this.simpanBtn.Location = new System.Drawing.Point(996, 738);
+            this.simpanBtn.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.simpanBtn.Name = "simpanBtn";
-            this.simpanBtn.Size = new System.Drawing.Size(117, 42);
+            this.simpanBtn.Size = new System.Drawing.Size(132, 52);
             this.simpanBtn.TabIndex = 30;
             this.simpanBtn.Text = "Simpan";
             this.simpanBtn.UseVisualStyleBackColor = false;
@@ -89,51 +92,53 @@
             // 
             // tanggalSelesaiDate
             // 
-            this.tanggalSelesaiDate.Location = new System.Drawing.Point(255, 132);
+            this.tanggalSelesaiDate.Location = new System.Drawing.Point(287, 165);
+            this.tanggalSelesaiDate.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tanggalSelesaiDate.Name = "tanggalSelesaiDate";
-            this.tanggalSelesaiDate.Size = new System.Drawing.Size(182, 22);
+            this.tanggalSelesaiDate.Size = new System.Drawing.Size(204, 26);
             this.tanggalSelesaiDate.TabIndex = 27;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(28, 252);
+            this.label6.Location = new System.Drawing.Point(32, 315);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(79, 16);
+            this.label6.Size = new System.Drawing.Size(92, 20);
             this.label6.TabIndex = 28;
             this.label6.Text = "Total Harga";
             // 
             // tanggalMulaiDate
             // 
-            this.tanggalMulaiDate.Location = new System.Drawing.Point(31, 132);
+            this.tanggalMulaiDate.Location = new System.Drawing.Point(35, 165);
+            this.tanggalMulaiDate.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tanggalMulaiDate.Name = "tanggalMulaiDate";
-            this.tanggalMulaiDate.Size = new System.Drawing.Size(195, 22);
+            this.tanggalMulaiDate.Size = new System.Drawing.Size(219, 26);
             this.tanggalMulaiDate.TabIndex = 25;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(28, 173);
+            this.label7.Location = new System.Drawing.Point(32, 216);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(101, 16);
+            this.label7.Size = new System.Drawing.Size(119, 20);
             this.label7.TabIndex = 29;
             this.label7.Text = "Pilih Kendaraan";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(252, 105);
+            this.label5.Location = new System.Drawing.Point(284, 131);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(107, 16);
+            this.label5.Size = new System.Drawing.Size(122, 20);
             this.label5.TabIndex = 24;
             this.label5.Text = "Tanggal Selesai";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(28, 105);
+            this.label4.Location = new System.Drawing.Point(32, 131);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(93, 16);
+            this.label4.Size = new System.Drawing.Size(107, 20);
             this.label4.TabIndex = 23;
             this.label4.Text = "Tanggal Mulai";
             // 
@@ -141,26 +146,28 @@
             // 
             this.kendaraanCmb.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.kendaraanCmb.FormattingEnabled = true;
-            this.kendaraanCmb.Location = new System.Drawing.Point(31, 193);
+            this.kendaraanCmb.Location = new System.Drawing.Point(35, 241);
+            this.kendaraanCmb.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.kendaraanCmb.Name = "kendaraanCmb";
-            this.kendaraanCmb.Size = new System.Drawing.Size(406, 24);
+            this.kendaraanCmb.Size = new System.Drawing.Size(456, 28);
             this.kendaraanCmb.TabIndex = 16;
             this.kendaraanCmb.SelectedIndexChanged += new System.EventHandler(this.kendaraanCmb_SelectedValueChanged);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(28, 44);
+            this.label3.Location = new System.Drawing.Point(32, 55);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(66, 16);
+            this.label3.Size = new System.Drawing.Size(77, 20);
             this.label3.TabIndex = 22;
             this.label3.Text = "Total Hari";
             // 
             // totalHariTxt
             // 
-            this.totalHariTxt.Location = new System.Drawing.Point(31, 71);
+            this.totalHariTxt.Location = new System.Drawing.Point(35, 89);
+            this.totalHariTxt.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.totalHariTxt.Name = "totalHariTxt";
-            this.totalHariTxt.Size = new System.Drawing.Size(408, 22);
+            this.totalHariTxt.Size = new System.Drawing.Size(458, 26);
             this.totalHariTxt.TabIndex = 21;
             this.totalHariTxt.TextChanged += new System.EventHandler(this.totalHariTxt_TextChanged);
             this.totalHariTxt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.totalHariTxt_KeyPress);
@@ -168,34 +175,36 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(22, 105);
+            this.label2.Location = new System.Drawing.Point(25, 131);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(118, 16);
+            this.label2.Size = new System.Drawing.Size(139, 20);
             this.label2.TabIndex = 20;
             this.label2.Text = "Alamat Pelanggan";
             // 
             // alamatPelangganTxt
             // 
-            this.alamatPelangganTxt.Location = new System.Drawing.Point(25, 132);
+            this.alamatPelangganTxt.Location = new System.Drawing.Point(28, 165);
+            this.alamatPelangganTxt.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.alamatPelangganTxt.Multiline = true;
             this.alamatPelangganTxt.Name = "alamatPelangganTxt";
-            this.alamatPelangganTxt.Size = new System.Drawing.Size(408, 85);
+            this.alamatPelangganTxt.Size = new System.Drawing.Size(458, 105);
             this.alamatPelangganTxt.TabIndex = 19;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(22, 49);
+            this.label1.Location = new System.Drawing.Point(25, 61);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(113, 16);
+            this.label1.Size = new System.Drawing.Size(131, 20);
             this.label1.TabIndex = 18;
             this.label1.Text = "Nama Pelanggan";
             // 
             // namaPelangganTxt
             // 
-            this.namaPelangganTxt.Location = new System.Drawing.Point(25, 71);
+            this.namaPelangganTxt.Location = new System.Drawing.Point(28, 89);
+            this.namaPelangganTxt.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.namaPelangganTxt.Name = "namaPelangganTxt";
-            this.namaPelangganTxt.Size = new System.Drawing.Size(408, 22);
+            this.namaPelangganTxt.Size = new System.Drawing.Size(458, 26);
             this.namaPelangganTxt.TabIndex = 17;
             // 
             // groupBox1
@@ -206,9 +215,11 @@
             this.groupBox1.Controls.Add(this.namaPelangganTxt);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Location = new System.Drawing.Point(42, 62);
+            this.groupBox1.Location = new System.Drawing.Point(47, 78);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(465, 318);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.groupBox1.Size = new System.Drawing.Size(523, 398);
             this.groupBox1.TabIndex = 31;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Edit Data Sewa";
@@ -216,18 +227,19 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(22, 227);
+            this.label8.Location = new System.Drawing.Point(25, 284);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(102, 16);
+            this.label8.Size = new System.Drawing.Size(117, 20);
             this.label8.TabIndex = 22;
             this.label8.Text = "Nomor Telepon";
             // 
             // noTlpTxt
             // 
-            this.noTlpTxt.Location = new System.Drawing.Point(25, 249);
+            this.noTlpTxt.Location = new System.Drawing.Point(28, 311);
+            this.noTlpTxt.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.noTlpTxt.MinimumSize = new System.Drawing.Size(4, 28);
             this.noTlpTxt.Name = "noTlpTxt";
-            this.noTlpTxt.Size = new System.Drawing.Size(408, 22);
+            this.noTlpTxt.Size = new System.Drawing.Size(458, 26);
             this.noTlpTxt.TabIndex = 21;
             this.noTlpTxt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.noTlpTxt_KeyPress);
             // 
@@ -235,9 +247,9 @@
             // 
             this.totalLbl.AutoSize = true;
             this.totalLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.totalLbl.Location = new System.Drawing.Point(27, 273);
+            this.totalLbl.Location = new System.Drawing.Point(30, 341);
             this.totalLbl.Name = "totalLbl";
-            this.totalLbl.Size = new System.Drawing.Size(16, 20);
+            this.totalLbl.Size = new System.Drawing.Size(20, 25);
             this.totalLbl.TabIndex = 46;
             this.totalLbl.Text = "-";
             // 
@@ -250,9 +262,10 @@
             this.hapusBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.hapusBtn.ForeColor = System.Drawing.Color.White;
             this.hapusBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.hapusBtn.Location = new System.Drawing.Point(671, 590);
+            this.hapusBtn.Location = new System.Drawing.Point(755, 738);
+            this.hapusBtn.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.hapusBtn.Name = "hapusBtn";
-            this.hapusBtn.Size = new System.Drawing.Size(197, 42);
+            this.hapusBtn.Size = new System.Drawing.Size(222, 52);
             this.hapusBtn.TabIndex = 45;
             this.hapusBtn.Text = "Hapus Pelanggan";
             this.hapusBtn.UseVisualStyleBackColor = false;
@@ -273,12 +286,53 @@
             this.groupBox2.Controls.Add(this.totalHariTxt);
             this.groupBox2.Controls.Add(this.label6);
             this.groupBox2.Controls.Add(this.tanggalMulaiDate);
-            this.groupBox2.Location = new System.Drawing.Point(526, 62);
+            this.groupBox2.Location = new System.Drawing.Point(592, 78);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(476, 318);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.groupBox2.Size = new System.Drawing.Size(536, 398);
             this.groupBox2.TabIndex = 32;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Detail Kendaraan";
+            // 
+            // hapusKendaraanBtn
+            // 
+            this.hapusKendaraanBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.hapusKendaraanBtn.Image = ((System.Drawing.Image)(resources.GetObject("hapusKendaraanBtn.Image")));
+            this.hapusKendaraanBtn.Location = new System.Drawing.Point(292, 298);
+            this.hapusKendaraanBtn.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.hapusKendaraanBtn.Name = "hapusKendaraanBtn";
+            this.hapusKendaraanBtn.Size = new System.Drawing.Size(70, 81);
+            this.hapusKendaraanBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.hapusKendaraanBtn.TabIndex = 51;
+            this.hapusKendaraanBtn.TabStop = false;
+            this.hapusKendaraanBtn.Click += new System.EventHandler(this.hapusKendaraanBtn_Click);
+            // 
+            // ubahKendaraanBtn
+            // 
+            this.ubahKendaraanBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ubahKendaraanBtn.Image = ((System.Drawing.Image)(resources.GetObject("ubahKendaraanBtn.Image")));
+            this.ubahKendaraanBtn.Location = new System.Drawing.Point(364, 304);
+            this.ubahKendaraanBtn.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.ubahKendaraanBtn.Name = "ubahKendaraanBtn";
+            this.ubahKendaraanBtn.Size = new System.Drawing.Size(74, 69);
+            this.ubahKendaraanBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.ubahKendaraanBtn.TabIndex = 50;
+            this.ubahKendaraanBtn.TabStop = false;
+            this.ubahKendaraanBtn.Click += new System.EventHandler(this.UbahKendaraanBtn_Click);
+            // 
+            // tambahKendaraanBtn
+            // 
+            this.tambahKendaraanBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.tambahKendaraanBtn.Image = ((System.Drawing.Image)(resources.GetObject("tambahKendaraanBtn.Image")));
+            this.tambahKendaraanBtn.Location = new System.Drawing.Point(440, 298);
+            this.tambahKendaraanBtn.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.tambahKendaraanBtn.Name = "tambahKendaraanBtn";
+            this.tambahKendaraanBtn.Size = new System.Drawing.Size(65, 79);
+            this.tambahKendaraanBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.tambahKendaraanBtn.TabIndex = 49;
+            this.tambahKendaraanBtn.TabStop = false;
+            this.tambahKendaraanBtn.Click += new System.EventHandler(this.tambahKendaraanBtn_Click);
             // 
             // DataGridSewa
             // 
@@ -293,12 +347,13 @@
             this.Column5,
             this.Column6,
             this.Column7});
-            this.DataGridSewa.Location = new System.Drawing.Point(42, 408);
+            this.DataGridSewa.Location = new System.Drawing.Point(47, 510);
+            this.DataGridSewa.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.DataGridSewa.Name = "DataGridSewa";
             this.DataGridSewa.ReadOnly = true;
             this.DataGridSewa.RowHeadersWidth = 51;
             this.DataGridSewa.RowTemplate.Height = 24;
-            this.DataGridSewa.Size = new System.Drawing.Size(960, 150);
+            this.DataGridSewa.Size = new System.Drawing.Size(1080, 188);
             this.DataGridSewa.TabIndex = 46;
             this.DataGridSewa.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridSewa_CellClick);
             // 
@@ -368,9 +423,9 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(48, 590);
+            this.label9.Location = new System.Drawing.Point(54, 738);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(78, 16);
+            this.label9.Size = new System.Drawing.Size(93, 20);
             this.label9.TabIndex = 49;
             this.label9.Text = "Grand Total";
             // 
@@ -378,53 +433,29 @@
             // 
             this.totalBayarLbl.AutoSize = true;
             this.totalBayarLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.totalBayarLbl.Location = new System.Drawing.Point(47, 610);
+            this.totalBayarLbl.Location = new System.Drawing.Point(53, 762);
             this.totalBayarLbl.Name = "totalBayarLbl";
-            this.totalBayarLbl.Size = new System.Drawing.Size(16, 20);
+            this.totalBayarLbl.Size = new System.Drawing.Size(20, 25);
             this.totalBayarLbl.TabIndex = 50;
             this.totalBayarLbl.Text = "-";
             // 
-            // tambahKendaraanBtn
+            // printBtn
             // 
-            this.tambahKendaraanBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.tambahKendaraanBtn.Image = ((System.Drawing.Image)(resources.GetObject("tambahKendaraanBtn.Image")));
-            this.tambahKendaraanBtn.Location = new System.Drawing.Point(391, 238);
-            this.tambahKendaraanBtn.Name = "tambahKendaraanBtn";
-            this.tambahKendaraanBtn.Size = new System.Drawing.Size(58, 63);
-            this.tambahKendaraanBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.tambahKendaraanBtn.TabIndex = 49;
-            this.tambahKendaraanBtn.TabStop = false;
-            this.tambahKendaraanBtn.Click += new System.EventHandler(this.tambahKendaraanBtn_Click);
-            // 
-            // ubahKendaraanBtn
-            // 
-            this.ubahKendaraanBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ubahKendaraanBtn.Image = ((System.Drawing.Image)(resources.GetObject("ubahKendaraanBtn.Image")));
-            this.ubahKendaraanBtn.Location = new System.Drawing.Point(324, 243);
-            this.ubahKendaraanBtn.Name = "ubahKendaraanBtn";
-            this.ubahKendaraanBtn.Size = new System.Drawing.Size(66, 55);
-            this.ubahKendaraanBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.ubahKendaraanBtn.TabIndex = 50;
-            this.ubahKendaraanBtn.TabStop = false;
-            this.ubahKendaraanBtn.Click += new System.EventHandler(this.UbahKendaraanBtn_Click);
-            // 
-            // hapusKendaraanBtn
-            // 
-            this.hapusKendaraanBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.hapusKendaraanBtn.Image = ((System.Drawing.Image)(resources.GetObject("hapusKendaraanBtn.Image")));
-            this.hapusKendaraanBtn.Location = new System.Drawing.Point(260, 238);
-            this.hapusKendaraanBtn.Name = "hapusKendaraanBtn";
-            this.hapusKendaraanBtn.Size = new System.Drawing.Size(62, 65);
-            this.hapusKendaraanBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.hapusKendaraanBtn.TabIndex = 51;
-            this.hapusKendaraanBtn.TabStop = false;
-            this.hapusKendaraanBtn.Click += new System.EventHandler(this.hapusKendaraanBtn_Click);
+            this.printBtn.Image = ((System.Drawing.Image)(resources.GetObject("printBtn.Image")));
+            this.printBtn.Location = new System.Drawing.Point(616, 729);
+            this.printBtn.Name = "printBtn";
+            this.printBtn.Size = new System.Drawing.Size(115, 67);
+            this.printBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.printBtn.TabIndex = 51;
+            this.printBtn.TabStop = false;
+            this.printBtn.Click += new System.EventHandler(this.printBtn_Click);
             // 
             // EditSewa_Frm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1056, 685);
+            this.ClientSize = new System.Drawing.Size(1188, 856);
+            this.Controls.Add(this.printBtn);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.totalBayarLbl);
             this.Controls.Add(this.DataGridSewa);
@@ -432,6 +463,7 @@
             this.Controls.Add(this.simpanBtn);
             this.Controls.Add(this.hapusBtn);
             this.Controls.Add(this.groupBox1);
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "EditSewa_Frm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Edit Sewa";
@@ -440,10 +472,11 @@
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DataGridSewa)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tambahKendaraanBtn)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ubahKendaraanBtn)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.hapusKendaraanBtn)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ubahKendaraanBtn)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tambahKendaraanBtn)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DataGridSewa)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.printBtn)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -484,5 +517,6 @@
         private System.Windows.Forms.PictureBox ubahKendaraanBtn;
         private System.Windows.Forms.PictureBox tambahKendaraanBtn;
         private System.Windows.Forms.PictureBox hapusKendaraanBtn;
+        private System.Windows.Forms.PictureBox printBtn;
     }
 }

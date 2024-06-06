@@ -1,4 +1,5 @@
 ﻿using Sewa_Kendaraan_Cilacap.model;
+using Sewa_Kendaraan_Cilacap.print;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -12,6 +13,8 @@ using System.Windows.Forms;
 
 namespace Sewa_Kendaraan_Cilacap.view
 {
+    using print;
+
     public partial class EditSewa_Frm : Form
     {
         private string _code_pelanggan;
@@ -281,17 +284,23 @@ namespace Sewa_Kendaraan_Cilacap.view
                 e.Handled = true;
             }
 
-            // Tidak memperbolehkan nilai kurang dari 1
-            if (e.KeyChar == '0' && noTlpTxt.Text.Length == 0)
-            {
-                e.Handled = true;
-            }
-
             // Membatasi panjang teks maksimal 16 karakter
             if (noTlpTxt.Text.Length >= 16 && e.KeyChar != (char)Keys.Back)
             {
                 e.Handled = true;
             }
+        }
+
+        private void printBtn_Click(object sender, EventArgs e)
+        {
+            cetak();
+        }
+
+        void cetak()
+        {
+            PrintSewa printSewa = new PrintSewa();
+            printSewa.code = _code_pelanggan;
+            printSewa.ShowDialog(this);
         }
     }
 }

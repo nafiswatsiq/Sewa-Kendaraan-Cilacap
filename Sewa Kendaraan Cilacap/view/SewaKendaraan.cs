@@ -72,11 +72,5 @@ namespace Sewa_Kendaraan_Cilacap.view
             ListSewa();
         }
 
-        private void cetakBtn_Click(object sender, EventArgs e)
-        {
-            RekapSewa rekapSewa = new RekapSewa();
-            rekapSewa.ShowDialog(this);
-        }
-
     }
 }

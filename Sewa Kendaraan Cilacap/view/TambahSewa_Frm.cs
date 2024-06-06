@@ -13,6 +13,8 @@ using System.Windows.Forms;
 
 namespace Sewa_Kendaraan_Cilacap.view
 {
+    using print;
+
     public partial class TambahSewa_Frm : Form
     {
         SewaCls sewa = new SewaCls();
@@ -28,6 +30,7 @@ namespace Sewa_Kendaraan_Cilacap.view
         int total_bayar;
         string selectedValueKendaraan;
         int pelanggan_id;
+        string code_pelanggan;
 
         private SewaKendaraan sewaKendaraanForm;
 
@@ -168,7 +171,6 @@ namespace Sewa_Kendaraan_Cilacap.view
             try
             {
                 // Dapatkan indeks baris yang dipilih dalam DataGridView
-                MessageBox.Show(selectedRowIndex.ToString());
                 int selectedTotal = Convert.ToInt32(SewaGridView.Rows[selectedRowIndex].Cells["Total"].Value.ToString());
 
                 total_bayar = total_bayar - selectedTotal;
@@ -194,10 +196,10 @@ namespace Sewa_Kendaraan_Cilacap.view
             pelanggan.no_tlp = noTlpTxt.Text;
             pelanggan.total_bayar = total_bayar;
 
-            string code = pelanggan.insert();
-            if(code != "")
+            code_pelanggan = pelanggan.insert();
+            if(code_pelanggan != "")
             {
-                pelanggan_id = pelanggan.getPelangganId(code);
+                pelanggan_id = pelanggan.getPelangganId(code_pelanggan);
 
                 foreach (DataRow item in dataTable.Rows)
                 {
@@ -217,6 +219,8 @@ namespace Sewa_Kendaraan_Cilacap.view
                 }
 
                 MessageBox.Show(data + " Data berhasil disimpan", "Informasi", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                cetak();
             }
             else
             {
@@ -239,7 +243,9 @@ namespace Sewa_Kendaraan_Cilacap.view
 
         void cetak()
         {
-            
+            PrintSewa printSewa = new PrintSewa();
+            printSewa.code = code_pelanggan;
+            printSewa.ShowDialog(this);
         }
 
         private void totalHariTxt_TextChanged(object sender, EventArgs e)
@@ -261,12 +267,6 @@ namespace Sewa_Kendaraan_Cilacap.view
         {
             // Hanya menerima angka dan tombol backspace
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
-            {
-                e.Handled = true;
-            }
-
-            // Tidak memperbolehkan nilai kurang dari 1
-            if (e.KeyChar == '0' && noTlpTxt.Text.Length == 0)
             {
                 e.Handled = true;
             }

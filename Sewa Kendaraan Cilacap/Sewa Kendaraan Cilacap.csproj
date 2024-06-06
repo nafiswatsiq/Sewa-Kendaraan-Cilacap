@@ -67,17 +67,17 @@
     <Compile Include="model\LoginCls.cs" />
     <Compile Include="model\PelangganCls.cs" />
     <Compile Include="model\SewaCls.cs" />
-    <Compile Include="print\PrintSewa.cs">
+    <Compile Include="print\PrintReport1.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>PrintSewa.rpt</DependentUpon>
+      <DependentUpon>PrintReport1.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="print\RekapSewa.cs">
+    <Compile Include="print\PrintSewa.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="print\RekapSewa.Designer.cs">
-      <DependentUpon>RekapSewa.cs</DependentUpon>
+    <Compile Include="print\PrintSewa.Designer.cs">
+      <DependentUpon>PrintSewa.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -129,12 +129,12 @@
     <Compile Include="view\TambahSewa_Frm.Designer.cs">
       <DependentUpon>TambahSewa_Frm.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="print\PrintSewa.rpt">
+    <EmbeddedResource Include="print\PrintReport1.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>PrintSewa.cs</LastGenOutput>
+      <LastGenOutput>PrintReport1.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="print\RekapSewa.resx">
-      <DependentUpon>RekapSewa.cs</DependentUpon>
+    <EmbeddedResource Include="print\PrintSewa.resx">
+      <DependentUpon>PrintSewa.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
